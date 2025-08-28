@@ -8,7 +8,7 @@ const Projects = () => {
     {
       title: "DrogSök.se",
       description: "Hemsida för bland annat polisanställda för att hitta specifika läkemedel.",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800",
+      image: "/lovable-uploads/16b7cf8d-1ec0-4fcb-ab0b-10a8019d666c.png",
       tech: ["React", "TypeScript", "Node.js", "MySQL"],
       github: "#",
       live: "https://drogsok.se",
