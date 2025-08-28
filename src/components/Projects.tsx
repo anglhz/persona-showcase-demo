@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -17,7 +17,7 @@ const Projects = () => {
     {
       title: "Intuitive - Gaming",
       description: "Gaming hemsida med fokus på server hosting.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800",
+      image: "/lovable-uploads/fd01128c-42c0-4f1e-b860-bae35ecdbbf9.png",
       tech: ["Next.js", "TypeScript", "Supabase"],
       github: "#",
       live: "https://intuitive-gaming.com"
@@ -104,13 +104,13 @@ const Projects = () => {
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <Button size="lg" className="shadow-glow">
+                      <Button 
+                        size="lg" 
+                        className="shadow-glow"
+                        onClick={() => window.open(project.live, '_blank')}
+                      >
                         <ExternalLink className="mr-2 h-4 w-4" />
                         Se Live
-                      </Button>
-                      <Button variant="outline" size="lg">
-                        <Github className="mr-2 h-4 w-4" />
-                        Kod
                       </Button>
                     </div>
                   </div>
@@ -155,11 +155,12 @@ const Projects = () => {
                     )}
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="ghost">
+                    <Button 
+                      size="sm" 
+                      variant="ghost"
+                      onClick={() => window.open(project.live, '_blank')}
+                    >
                       <ExternalLink className="h-4 w-4" />
-                    </Button>
-                    <Button size="sm" variant="ghost">
-                      <Github className="h-4 w-4" />
                     </Button>
                   </div>
                 </div>
