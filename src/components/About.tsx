@@ -14,8 +14,8 @@ const About = () => {
       icon: <Globe className="h-8 w-8" />,
       title: "Företagswebbplatser",
       description: "Professionella webbplatser som stärker ditt varumärke och attraherar nya kunder. Modern design med fokus på konvertering och användarvänlighet.",
-      features: ["Responsiv design", "SEO-optimerad", "Snabb laddning", "Kontaktformulär", "CMS-integration", "Analytics"],
-      price: "Från 18 000 kr"
+      features: ["Responsiv design", "SEO-optimerad", "Snabb laddning", "Kontaktformulär"],
+      price: "Från 15 000 kr"
     },
     {
       icon: <Palette className="h-8 w-8" />,
@@ -31,7 +31,7 @@ const About = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Om <span className="gradient-text">Tommy</span>
+            Om <span className="gradient-text">Mig</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Jag är en självlärd hobby utvecklare med passion för att skapa digitala lösningar 

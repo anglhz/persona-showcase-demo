@@ -16,39 +16,25 @@ const Hero = () => {
           {/* Text Content */}
           <div className="text-center lg:text-left animate-slide-up">
             <div className="inline-block mb-4 px-4 py-2 rounded-full backdrop-blur-glass border border-primary/20">
-              <span className="text-sm gradient-text font-medium">Fullstack Utvecklare & Designer</span>
+              <span className="text-sm gradient-text font-medium">Webbutvecklare och Designer</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="block">Hej, jag är</span>
+              <span className="block">Hej, mitt namn är</span>
               <span className="gradient-text animate-glow">Tommy</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
-              Jag skapar digitala upplevelser som kombinerar funktionalitet med vacker design. 
-              Specialiserad på React, Node.js och moderna webblösningar.
-            </p>
+            <div className="flex justify-center lg:justify-start mb-8">
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl text-center lg:text-left">
+                Jag skapar digitala upplevelser som kombinerar funktionalitet med vacker design. 
+                Specialiserad på React, Node.js och moderna webblösningar.
+              </p>
+            </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+            <div className="flex justify-center lg:justify-start mb-8">
               <Button size="lg" className="group shadow-glow hover:shadow-hero transition-all duration-300">
                 Se mina projekt
                 <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-primary/30 hover:bg-primary/10">
-                Ladda ner CV
-              </Button>
-            </div>
-            
-            {/* Social Links */}
-            <div className="flex gap-4 justify-center lg:justify-start">
-              <Button variant="ghost" size="sm" className="hover:bg-primary/10">
-                <Github className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="sm" className="hover:bg-primary/10">
-                <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="sm" className="hover:bg-primary/10">
-                <Mail className="h-5 w-5" />
               </Button>
             </div>
           </div>

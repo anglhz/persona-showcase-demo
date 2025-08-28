@@ -67,21 +67,6 @@ const Contact = () => {
               </Card>
             </div>
 
-            {/* Social Links */}
-            <div>
-              <h4 className="font-semibold mb-4">Följ mig</h4>
-              <div className="flex gap-4">
-                <Button size="lg" variant="outline" className="border-primary/30 hover:bg-primary/10 group">
-                  <Github className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-primary/30 hover:bg-primary/10 group">
-                  <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-primary/30 hover:bg-primary/10 group">
-                  <Twitter className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                </Button>
-              </div>
-            </div>
           </div>
 
           {/* Contact Form */}

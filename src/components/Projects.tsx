@@ -6,12 +6,12 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "E-handelslösning för Mode",
-      description: "Fullstack e-handelsplattform med betalningsintegration, lagerhantering och administratörspanel.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
+      title: "DrogSök.se",
+      description: "Hemsida för bland annat polisanställda för att hitta specifika läkemedel.",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800",
+      tech: ["React", "TypeScript", "Node.js", "PostgreSQL"],
       github: "#",
-      live: "#",
+      live: "https://drogsok.se",
       featured: true
     },
     {

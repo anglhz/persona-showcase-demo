@@ -44,7 +44,7 @@ const Navigation = () => {
               onClick={() => scrollToSection("#home")}
               className="text-2xl font-bold gradient-text hover:scale-105 transition-transform"
             >
-              Tommy.dev
+              Fertekz.se
             </button>
           </div>
 
