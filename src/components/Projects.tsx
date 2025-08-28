@@ -106,7 +106,7 @@ const Projects = () => {
                     <div className="flex gap-4">
                       <Button size="lg" className="shadow-glow">
                         <ExternalLink className="mr-2 h-4 w-4" />
-                        Se Live Demo
+                        Se Live
                       </Button>
                       <Button variant="outline" size="lg">
                         <Github className="mr-2 h-4 w-4" />
