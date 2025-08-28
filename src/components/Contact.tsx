@@ -18,8 +18,15 @@ const Contact = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send notification to ntfy
+      await fetch('https://ntfy.sh/Fertekz-com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+        body: `Nytt meddelande från ${data.name}\n\nEmail: ${data.email}\nÄmne: ${data.subject}\n\n${data.message}`,
+      });
+
       toast.success("Meddelande skickat! Jag återkommer inom 24 timmar.");
       reset();
     } catch (error) {

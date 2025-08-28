@@ -34,7 +34,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 py-12">
           {/* About */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold gradient-text mb-4">Fertekz.se</h3>
+            <h3 className="text-2xl font-bold gradient-text mb-4">Fertekz.com</h3>
             <p className="text-muted-foreground mb-6 max-w-md">
               Webbutvecklare och designer som skapar digitala upplevelser som 
               kombinerar funktionalitet med vacker design. Baserad i Eskilstuna, Sverige.
