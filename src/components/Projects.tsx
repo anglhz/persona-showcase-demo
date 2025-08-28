@@ -23,34 +23,18 @@ const Projects = () => {
       live: "https://intuitive-gaming.com"
     },
     {
-      title: "HealthTrack Mobile",
-      description: "React Native app för hälsouppföljning med IoT-integration.",
+      title: "Hakuna Potata",
+      description: "Snabbmatskedja baserat i USA med inriktning bakpotatis.",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800",
       tech: ["React Native", "Express", "MongoDB", "IoT"],
       github: "#",
-      live: "#"
+      live: "https://preview--hakuna-potata-fiesta-web.lovable.app"
     },
     {
       title: "Smart Analytics Dashboard",
       description: "Datavisualiseringsdashboard för affärsanalys med realtidsuppdateringar.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
       tech: ["Vue.js", "D3.js", "Python", "Redis"],
-      github: "#",
-      live: "#"
-    },
-    {
-      title: "Creative Portfolio CMS",
-      description: "Headless CMS för kreativa portfolios med drag-and-drop editor.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
-      tech: ["Gatsby", "Strapi", "GraphQL", "Cloudinary"],
-      github: "#",
-      live: "#"
-    },
-    {
-      title: "FinTech Banking App",
-      description: "Säker bankapp med biometrisk autentisering och AI-driven budgetanalys.",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800",
-      tech: ["Flutter", "Node.js", "PostgreSQL", "JWT"],
       github: "#",
       live: "#"
     }
