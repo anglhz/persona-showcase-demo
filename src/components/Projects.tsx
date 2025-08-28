@@ -31,12 +31,12 @@ const Projects = () => {
       live: "https://preview--hakuna-potata-fiesta-web.lovable.app"
     },
     {
-      title: "Smart Analytics Dashboard",
+      title: "NorrElektro",
       description: "Datavisualiseringsdashboard för affärsanalys med realtidsuppdateringar.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-      tech: ["Vue.js", "D3.js", "Python", "Redis"],
+      tech: ["React", "TypeScript", "Vite"],
       github: "#",
-      live: "#"
+      live: "https://preview--norrkoping-spark-studio.lovable.app"
     }
   ];
 
