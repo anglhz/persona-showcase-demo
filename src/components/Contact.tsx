@@ -37,7 +37,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold">Email</h4>
-                    <p className="text-muted-foreground">alex.andersson@email.se</p>
+                    <p className="text-muted-foreground">tommy@fertekz.com</p>
                   </div>
                 </div>
               </Card>
@@ -49,7 +49,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold">Telefon</h4>
-                    <p className="text-muted-foreground">+46 70 123 45 67</p>
+                    <p className="text-muted-foreground">0734145099</p>
                   </div>
                 </div>
               </Card>
@@ -61,7 +61,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold">Plats</h4>
-                    <p className="text-muted-foreground">Stockholm, Sverige</p>
+                    <p className="text-muted-foreground">Eskilstuna, Sverige</p>
                   </div>
                 </div>
               </Card>
@@ -128,27 +128,6 @@ const Contact = () => {
                 Skicka meddelande
               </Button>
             </form>
-          </Card>
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-20">
-          <Card className="p-12 gradient-card shadow-hero">
-            <h3 className="text-3xl font-bold mb-4">
-              Redo att starta ditt <span className="gradient-text">nästa projekt</span>?
-            </h3>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Låt oss förvandla dina idéer till verklighet. Jag hjälper dig att skapa 
-              digitala lösningar som verkligen gör skillnad.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="shadow-glow">
-                Boka en konsultation
-              </Button>
-              <Button size="lg" variant="outline" className="border-primary/30 hover:bg-primary/10">
-                Se min CV
-              </Button>
-            </div>
           </Card>
         </div>
       </div>

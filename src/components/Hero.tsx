@@ -4,7 +4,7 @@ import heroProfile from "@/assets/hero-profile.jpg";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen gradient-hero flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen gradient-hero flex items-center justify-center relative overflow-hidden pt-16">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/2 -left-1/2 w-96 h-96 rounded-full bg-primary/10 animate-float" />
@@ -21,7 +21,7 @@ const Hero = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="block">Hej, jag är</span>
-              <span className="gradient-text animate-glow">Alex Andersson</span>
+              <span className="gradient-text animate-glow">Tommy</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
@@ -58,7 +58,7 @@ const Hero = () => {
             <div className="relative">
               <img
                 src={heroProfile}
-                alt="Alex Andersson - Fullstack Utvecklare"
+                alt="Tommy - Fullstack Utvecklare"
                 className="w-full max-w-lg mx-auto rounded-2xl shadow-hero animate-glow"
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-accent opacity-20" />
