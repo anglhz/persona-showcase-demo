@@ -32,8 +32,8 @@ const Projects = () => {
     },
     {
       title: "NorrElektro",
-      description: "Datavisualiseringsdashboard för affärsanalys med realtidsuppdateringar.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+      description: "Elektriker baserad i Norrköping",
+      image: "/lovable-uploads/4753ea48-827c-4ffb-93e4-ecfa8ca526dc.png",
       tech: ["React", "TypeScript", "Vite"],
       github: "#",
       live: "https://preview--norrkoping-spark-studio.lovable.app"
