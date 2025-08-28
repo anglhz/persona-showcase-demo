@@ -9,18 +9,18 @@ const Projects = () => {
       title: "DrogSök.se",
       description: "Hemsida för bland annat polisanställda för att hitta specifika läkemedel.",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800",
-      tech: ["React", "TypeScript", "Node.js", "PostgreSQL"],
+      tech: ["React", "TypeScript", "Node.js", "MySQL"],
       github: "#",
       live: "https://drogsok.se",
       featured: true
     },
     {
-      title: "TaskMaster Pro",
-      description: "Projekthanteringsapp med realtidssamarbete och avancerad analys.",
+      title: "Intuitive - Gaming",
+      description: "Gaming hemsida med fokus på server hosting.",
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800",
-      tech: ["Next.js", "TypeScript", "Prisma", "Socket.io"],
+      tech: ["Next.js", "TypeScript", "Supabase"],
       github: "#",
-      live: "#"
+      live: "https://intuitive-gaming.com"
     },
     {
       title: "HealthTrack Mobile",
