@@ -1,0 +1,174 @@
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github } from "lucide-react";
+
+const Projects = () => {
+  const projects = [
+    {
+      title: "E-handelslösning för Mode",
+      description: "Fullstack e-handelsplattform med betalningsintegration, lagerhantering och administratörspanel.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+      tech: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
+      github: "#",
+      live: "#",
+      featured: true
+    },
+    {
+      title: "TaskMaster Pro",
+      description: "Projekthanteringsapp med realtidssamarbete och avancerad analys.",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800",
+      tech: ["Next.js", "TypeScript", "Prisma", "Socket.io"],
+      github: "#",
+      live: "#"
+    },
+    {
+      title: "HealthTrack Mobile",
+      description: "React Native app för hälsouppföljning med IoT-integration.",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800",
+      tech: ["React Native", "Express", "MongoDB", "IoT"],
+      github: "#",
+      live: "#"
+    },
+    {
+      title: "Smart Analytics Dashboard",
+      description: "Datavisualiseringsdashboard för affärsanalys med realtidsuppdateringar.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+      tech: ["Vue.js", "D3.js", "Python", "Redis"],
+      github: "#",
+      live: "#"
+    },
+    {
+      title: "Creative Portfolio CMS",
+      description: "Headless CMS för kreativa portfolios med drag-and-drop editor.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+      tech: ["Gatsby", "Strapi", "GraphQL", "Cloudinary"],
+      github: "#",
+      live: "#"
+    },
+    {
+      title: "FinTech Banking App",
+      description: "Säker bankapp med biometrisk autentisering och AI-driven budgetanalys.",
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800",
+      tech: ["Flutter", "Node.js", "PostgreSQL", "JWT"],
+      github: "#",
+      live: "#"
+    }
+  ];
+
+  return (
+    <section className="py-20" id="projects">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Mina <span className="gradient-text">Projekt</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            En samling av projekt som visar min expertis inom olika teknologier och branschområden.
+          </p>
+        </div>
+
+        {/* Featured Project */}
+        <div className="mb-16">
+          {projects
+            .filter(project => project.featured)
+            .map((project, index) => (
+              <Card
+                key={project.title}
+                className="overflow-hidden gradient-card shadow-hero group animate-slide-up"
+              >
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-80 lg:h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors" />
+                  </div>
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="inline-block mb-4">
+                      <Badge variant="secondary" className="bg-primary/20 text-primary">
+                        Utvalt Projekt
+                      </Badge>
+                    </div>
+                    <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
+                    <p className="text-muted-foreground text-lg mb-6">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-8">
+                      {project.tech.map(tech => (
+                        <Badge key={tech} variant="outline" className="border-primary/30">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    <div className="flex gap-4">
+                      <Button size="lg" className="shadow-glow">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Se Live Demo
+                      </Button>
+                      <Button variant="outline" size="lg">
+                        <Github className="mr-2 h-4 w-4" />
+                        Kod
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+        </div>
+
+        {/* Other Projects */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects
+            .filter(project => !project.featured)
+            .map((project, index) => (
+              <Card
+                key={project.title}
+                className="group overflow-hidden gradient-card shadow-card hover:shadow-glow transition-all duration-300 animate-slide-up"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {project.tech.slice(0, 3).map(tech => (
+                      <Badge key={tech} variant="outline" className="text-xs border-primary/30">
+                        {tech}
+                      </Badge>
+                    ))}
+                    {project.tech.length > 3 && (
+                      <Badge variant="outline" className="text-xs border-primary/30">
+                        +{project.tech.length - 3}
+                      </Badge>
+                    )}
+                  </div>
+                  <div className="flex gap-2">
+                    <Button size="sm" variant="ghost">
+                      <ExternalLink className="h-4 w-4" />
+                    </Button>
+                    <Button size="sm" variant="ghost">
+                      <Github className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
