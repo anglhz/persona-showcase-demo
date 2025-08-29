@@ -15,14 +15,14 @@ const About = () => {
       title: "Företagswebbplatser",
       description: "Professionella webbplatser som stärker ditt varumärke och attraherar nya kunder. Modern design med fokus på konvertering och användarvänlighet.",
       features: ["Responsiv design", "SEO-optimerad", "Snabb laddning", "Kontaktformulär"],
-      price: "Från 15 000 kr"
+      price: "Från 7000 kr"
     },
     {
       icon: <Palette className="h-8 w-8" />,
       title: "Portfolio & Personliga sidor",
       description: "Skapa ett starkt digitalt intryck med en personlig webbplats som visar upp dina färdigheter och uppnåelser på bästa möjliga sätt.",
       features: ["Projektgalleri", "CV-sektion", "Kontaktmöjligheter", "Blogfunktion", "Social media integration", "Mobil-optimerad"],
-      price: "Från 10 000 kr"
+      price: "Från 5000 kr"
     }
   ];
 
