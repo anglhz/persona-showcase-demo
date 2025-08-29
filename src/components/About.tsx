@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Code, Palette, Smartphone, Globe } from "lucide-react";
 
 const About = () => {
@@ -103,9 +104,100 @@ const About = () => {
                 
                 <div className="flex items-center justify-between">
                   <span className="font-semibold gradient-text">{service.price}</span>
-                  <Button variant="outline" size="sm" className="border-primary/30 hover:bg-primary/10">
-                    Läs mer
-                  </Button>
+                  {service.title === "Företagswebbplatser" ? (
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="outline" size="sm" className="border-primary/30 hover:bg-primary/10">
+                          Läs mer
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="text-2xl mb-4">Företagswebbplatser som ger resultat</DialogTitle>
+                        </DialogHeader>
+                        
+                        <div className="space-y-6">
+                          <p className="text-muted-foreground">
+                            En modern hemsida är ofta det första intrycket dina kunder får. Jag bygger professionella webbplatser som stärker ditt varumärke, skapar förtroende och hjälper dig vinna fler kunder.
+                          </p>
+
+                          <div>
+                            <h3 className="text-xl font-semibold mb-4">Vad du får i baspaketet – från 7 000 kr</h3>
+                            <div className="grid gap-2">
+                              <p>✨ Modern design, anpassad efter ditt företag</p>
+                              <p>📱 Mobilvänlig (responsiv) layout</p>
+                              <p>📄 Upp till 5 sidor (Start, Tjänster, Om oss, Kontakt, Referenser)</p>
+                              <p>📧 Kontaktformulär direkt till din e-post</p>
+                              <p>🔍 Grundläggande SEO (så du syns på Google)</p>
+                              <p>🌍 Koppling till Google Maps & sociala medier</p>
+                              <p>⚡ Snabb laddning</p>
+                              <p>📘 Enkel manual så du kan uppdatera själv</p>
+                            </div>
+                          </div>
+
+                          <div>
+                            <h3 className="text-xl font-semibold mb-4">Prisstruktur</h3>
+                            <div className="space-y-2">
+                              <p><strong>Baspaket:</strong> från 7 000 kr</p>
+                              <p><strong>Extra sidor:</strong> 1 000 kr/st</p>
+                              <p><strong>Webbshop eller bokningssystem:</strong> offert</p>
+                              <p><strong>Textproduktion, fotografering, logotyp:</strong> offert</p>
+                            </div>
+                          </div>
+
+                          <div>
+                            <h3 className="text-xl font-semibold mb-4">Drift & support (valfritt abonnemang)</h3>
+                            <p className="mb-2">🔒 <strong>Vill du slippa tänka på tekniken?</strong></p>
+                            <p className="mb-2">Jag erbjuder trygga underhållspaket:</p>
+                            <div className="space-y-2 ml-4">
+                              <p><strong>490 kr/mån</strong> – Webbhotell, säkerhetskopiering, uppdateringar, enklare support</p>
+                              <p><strong>990 kr/mån</strong> – Som ovan + 1 timmes innehållsändringar per månad</p>
+                            </div>
+                          </div>
+
+                          <div>
+                            <h3 className="text-xl font-semibold mb-4">Så går det till</h3>
+                            <div className="space-y-2">
+                              <p>1️⃣ Vi bokar ett kort möte och går igenom dina behov</p>
+                              <p>2️⃣ Du skickar in material (texter, logotyp, ev. bilder)</p>
+                              <p>3️⃣ Jag bygger sidan och skickar en förhandsvisning</p>
+                              <p>4️⃣ Du ger feedback → vi justerar → sidan lanseras!</p>
+                              <p className="mt-4"><strong>📅 Normal leveranstid:</strong> 2–4 veckor</p>
+                            </div>
+                          </div>
+
+                          <div>
+                            <h3 className="text-xl font-semibold mb-4">Vanliga frågor</h3>
+                            <div className="space-y-4">
+                              <div>
+                                <p className="font-semibold">Kan jag uppdatera sidan själv?</p>
+                                <p className="text-muted-foreground">Ja! Du får en enkel manual och kan själv byta texter/bilder.</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold">Vad händer om jag inte köper driftpaket?</p>
+                                <p className="text-muted-foreground">Då ansvarar du själv för webbhotell, backup och uppdateringar. Jag hjälper gärna med rekommendationer.</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold">Äger jag hemsidan?</p>
+                                <p className="text-muted-foreground">Självklart – du äger både domän och innehåll och får full tillgång efter leverans.</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="bg-primary/5 p-4 rounded-lg">
+                            <p className="text-center font-semibold">
+                              👉 Redo att ta nästa steg?<br/>
+                              Kontakta mig idag så bygger vi en hemsida som stärker ditt företag!
+                            </p>
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  ) : (
+                    <Button variant="outline" size="sm" className="border-primary/30 hover:bg-primary/10">
+                      Läs mer
+                    </Button>
+                  )}
                 </div>
               </Card>
             ))}
