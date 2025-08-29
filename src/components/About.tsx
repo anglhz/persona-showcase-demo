@@ -10,6 +10,29 @@ const About = () => {
     "Tailwind CSS", "Responsive Design", "SEO Optimization"
   ];
 
+  const faqs = [
+    {
+      question: "Kan jag uppdatera sidan själv?",
+      answer: "Ja! Du får en enkel manual och kan själv byta texter/bilder."
+    },
+    {
+      question: "Vad händer om jag inte köper driftpaket?",
+      answer: "Då ansvarar du själv för webbhotell, backup och uppdateringar. Jag hjälper gärna med rekommendationer."
+    },
+    {
+      question: "Äger jag hemsidan?",
+      answer: "Självklart – du äger både domän och innehåll och får full tillgång efter leverans."
+    },
+    {
+      question: "Passar en landningssida för företag?",
+      answer: "Ja, särskilt småföretag som vill synas online utan en stor sajt."
+    },
+    {
+      question: "Måste jag teckna drift?",
+      answer: "Nej, du kan hosta själv."
+    }
+  ];
+
   const services = [
     {
       icon: <Globe className="h-8 w-8" />,
@@ -18,19 +41,19 @@ const About = () => {
       features: ["Responsiv design", "SEO-optimerad", "Snabb laddning", "Kontaktformulär"],
       price: "Från 7000 kr"
     },
-    {
-      icon: <Palette className="h-8 w-8" />,
-      title: "Portfolio & Personliga sidor",
-      description: "Skapa ett starkt digitalt intryck med en personlig webbplats som visar upp dina färdigheter och uppnåelser på bästa möjliga sätt.",
-      features: ["Projektgalleri", "CV-sektion", "Kontaktmöjligheter", "Blogfunktion", "Social media integration", "Mobil-optimerad"],
-      price: "Från 5000 kr"
-    },
+    // {
+    //   icon: <Palette className="h-8 w-8" />,
+    //   title: "Portfolio & Personliga sidor",
+    //   description: "Skapa ett starkt digitalt intryck med en personlig webbplats som visar upp dina färdigheter och uppnåelser på bästa möjliga sätt.",
+    //   features: ["Projektgalleri", "CV-sektion", "Kontaktmöjligheter", "Blogfunktion", "Social media integration", "Mobil-optimerad"],
+    //   price: "Från 5000 kr"
+    // },
     {
       icon: <Smartphone className="h-8 w-8" />,
       title: "Landningssidor",
       description: "En enkel men kraftfull webbplats på en sida – perfekt för kampanjer, småföretag eller tjänster som behöver ett snabbt och tydligt digitalt avtryck.",
       features: ["Modern design", "Upp till 4 sektioner", "Mobiloptimerad", "Kontaktformulär", "Grundläggande SEO", "Manual"],
-      price: "Från 4000 kr"
+      price: "Från 5000 kr"
     }
   ];
 
@@ -85,7 +108,7 @@ const About = () => {
           <h3 className="text-3xl font-bold text-center mb-12">
             Vad jag <span className="gradient-text">Erbjuder</span>
           </h3>
-          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <Card
                 key={service.title}
@@ -174,103 +197,11 @@ const About = () => {
                               </div>
                             </div>
 
-                            <div>
-                              <h3 className="text-xl font-semibold mb-4">Vanliga frågor</h3>
-                              <div className="space-y-4">
-                                <div>
-                                  <p className="font-semibold">Kan jag uppdatera sidan själv?</p>
-                                  <p className="text-muted-foreground">Ja! Du får en enkel manual och kan själv byta texter/bilder.</p>
-                                </div>
-                                <div>
-                                  <p className="font-semibold">Vad händer om jag inte köper driftpaket?</p>
-                                  <p className="text-muted-foreground">Då ansvarar du själv för webbhotell, backup och uppdateringar. Jag hjälper gärna med rekommendationer.</p>
-                                </div>
-                                <div>
-                                  <p className="font-semibold">Äger jag hemsidan?</p>
-                                  <p className="text-muted-foreground">Självklart – du äger både domän och innehåll och får full tillgång efter leverans.</p>
-                                </div>
-                              </div>
-                            </div>
-
                             <div className="bg-primary/5 p-4 rounded-lg">
                               <p className="text-center font-semibold">
                                 Redo att ta nästa steg?<br/>
                                 Kontakta mig idag så bygger vi en hemsida som stärker ditt företag!
                               </p>
-                            </div>
-                          </div>
-                        </>
-                      )}
-                      
-                      {service.title === "Portfolio & Personliga sidor" && (
-                        <>
-                          <DialogHeader>
-                            <DialogTitle className="text-2xl mb-4">Portfolio & personliga sidor som lyfter dig</DialogTitle>
-                          </DialogHeader>
-                          
-                          <div className="space-y-6">
-                            <p className="text-muted-foreground">
-                              Visa upp dina projekt, erfarenheter och kontaktvägar på ett snyggt, snabbt och lättskött sätt.
-                            </p>
-
-                            <div>
-                              <h3 className="text-xl font-semibold mb-4">Vad du får – från 5 000 kr</h3>
-                              <div className="grid gap-2">
-                                <p>Projektgalleri (grid/lightbox)</p>
-                                <p>CV-sektion (erfarenhet, skills, utbildning)</p>
-                                <p>Kontakt (formulär + länkar)</p>
-                                <p>Blogg (kategorier, sök, arkiv)</p>
-                                <p>Sociala medier-integration</p>
-                                <p>Mobiloptimerad & snabb</p>
-                                <p>SEO-bas (titlar/metabeskrivningar)</p>
-                                <p>Manual för att uppdatera själv</p>
-                              </div>
-                            </div>
-
-                            <div>
-                              <h3 className="text-xl font-semibold mb-4">Prisstruktur</h3>
-                              <div className="space-y-2">
-                                <p><strong>Baspaket:</strong> från 5 000 kr</p>
-                                <p><strong>Extra sektion/sida:</strong> 700–900 kr/st</p>
-                                <p><strong>Extra:</strong> foto/ikonpaket, animeringar, flerspråk: offert</p>
-                              </div>
-                            </div>
-
-                            <div>
-                              <h3 className="text-xl font-semibold mb-4">Drift & support (valfritt)</h3>
-                              <div className="space-y-2 ml-4">
-                                <p><strong>290 kr/mån:</strong> hosting, backup, uppdateringar, enklare support</p>
-                                <p><strong>690 kr/mån:</strong> som ovan + 30 min ändringar/mån</p>
-                              </div>
-                            </div>
-
-                            <div>
-                              <h3 className="text-xl font-semibold mb-4">Så går det till</h3>
-                              <div className="space-y-2">
-                                <p>Kort behovsgenomgång</p>
-                                <p>Du skickar text/bilder</p>
-                                <p>Design & demo</p>
-                                <p>Feedback & lansering</p>
-                                <p className="mt-4"><strong>Leveranstid:</strong> ca 1–2 veckor med komplett material.</p>
-                              </div>
-                            </div>
-
-                            <div>
-                              <h3 className="text-xl font-semibold mb-4">Vanliga frågor</h3>
-                              <div className="space-y-4">
-                                <div>
-                                  <p className="font-semibold">Kan jag uppdatera själv?</p>
-                                  <p className="text-muted-foreground">Ja, du får enkel manual.</p>
-                                </div>
-                                <div>
-                                  <p className="font-semibold">Äger jag sidan och domänen?</p>
-                                  <p className="text-muted-foreground">Ja.</p>
-                                </div>
-                                <div>
-                                  <p className="font-semibold">Måste jag teckna drift?</p>
-                                  <p className="text-muted-foreground">Nej, du kan hosta själv.</p>
-                                </div>
-                              </div>
                             </div>
                           </div>
                         </>
@@ -288,7 +219,7 @@ const About = () => {
                             </p>
 
                             <div>
-                              <h3 className="text-xl font-semibold mb-4">Vad du får – från 4 000 kr</h3>
+                              <h3 className="text-xl font-semibold mb-4">Vad du får – från 5 000 kr</h3>
                               <div className="grid gap-2">
                                 <p>Modern design med fokus på tydlig struktur</p>
                                 <p>Upp till 4 sektioner (t.ex. Hero, Om, Tjänster/erbjudande, Kontakt)</p>
@@ -302,7 +233,7 @@ const About = () => {
                             <div>
                               <h3 className="text-xl font-semibold mb-4">Prisstruktur</h3>
                               <div className="space-y-2">
-                                <p><strong>Baspaket:</strong> från 4 000 kr</p>
+                                <p><strong>Baspaket:</strong> från 5 000 kr</p>
                                 <p><strong>Extra sektion:</strong> 800–1 000 kr/st</p>
                                 <p><strong>Tillägg:</strong> bokningsformulär, enkät, galleri: offert</p>
                               </div>
@@ -326,29 +257,77 @@ const About = () => {
                                 <p className="mt-4"><strong>Leveranstid:</strong> ca 1 vecka med komplett material.</p>
                               </div>
                             </div>
-
-                            <div>
-                              <h3 className="text-xl font-semibold mb-4">Vanliga frågor</h3>
-                              <div className="space-y-4">
-                                <div>
-                                  <p className="font-semibold">Kan jag uppdatera själv?</p>
-                                  <p className="text-muted-foreground">Ja, du får enkel manual.</p>
-                                </div>
-                                <div>
-                                  <p className="font-semibold">Passar en landningssida för företag?</p>
-                                  <p className="text-muted-foreground">Ja, särskilt småföretag som vill synas online utan en stor sajt.</p>
-                                </div>
-                                <div>
-                                  <p className="font-semibold">Måste jag teckna drift?</p>
-                                  <p className="text-muted-foreground">Nej, du kan hosta själv.</p>
-                                </div>
-                              </div>
-                            </div>
                           </div>
                         </>
                       )}
                     </DialogContent>
                   </Dialog>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Launch Offer */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold mb-4">
+              <span className="gradient-text">Lanseringserbjudande</span>
+            </h3>
+            <p className="text-xl text-muted-foreground">Begränsat erbjudande för nya kunder</p>
+          </div>
+          
+          <Card className="max-w-md mx-auto p-8 gradient-card shadow-glow border-primary/20">
+            <div className="text-center">
+              <div className="text-primary mb-4">
+                <Smartphone className="h-12 w-12 mx-auto" />
+              </div>
+              <h4 className="text-2xl font-bold mb-2">Landningssida</h4>
+              <div className="mb-4">
+                <span className="text-4xl font-bold gradient-text">3000 kr</span>
+                <p className="text-sm text-muted-foreground line-through">Ordinarie 5000 kr</p>
+              </div>
+              <p className="text-muted-foreground mb-6">
+                Perfekt för dig som vill komma igång snabbt med en professionell närvaro online.
+              </p>
+              <div className="text-left mb-6">
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
+                    Modern design på en sida
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
+                    Mobiloptimerad
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
+                    Kontaktformulär
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
+                    Grundläggande SEO
+                  </li>
+                </ul>
+              </div>
+              <Button className="w-full">
+                Passa på nu!
+              </Button>
+            </div>
+          </Card>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-16">
+          <h3 className="text-3xl font-bold text-center mb-12">
+            Vanliga <span className="gradient-text">Frågor</span>
+          </h3>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {faqs.map((faq, index) => (
+              <Card key={index} className="p-6 gradient-card">
+                <div className="space-y-2">
+                  <h4 className="text-lg font-semibold">{faq.question}</h4>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               </Card>
             ))}
