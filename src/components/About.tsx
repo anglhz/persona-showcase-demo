@@ -124,14 +124,14 @@ const About = () => {
                           <div>
                             <h3 className="text-xl font-semibold mb-4">Vad du får i baspaketet – från 7 000 kr</h3>
                             <div className="grid gap-2">
-                              <p>✨ Modern design, anpassad efter ditt företag</p>
-                              <p>📱 Mobilvänlig (responsiv) layout</p>
-                              <p>📄 Upp till 5 sidor (Start, Tjänster, Om oss, Kontakt, Referenser)</p>
-                              <p>📧 Kontaktformulär direkt till din e-post</p>
-                              <p>🔍 Grundläggande SEO (så du syns på Google)</p>
-                              <p>🌍 Koppling till Google Maps & sociala medier</p>
-                              <p>⚡ Snabb laddning</p>
-                              <p>📘 Enkel manual så du kan uppdatera själv</p>
+                              <p>Modern design, anpassad efter ditt företag</p>
+                              <p>Mobilvänlig (responsiv) layout</p>
+                              <p>Upp till 5 sidor (Start, Tjänster, Om oss, Kontakt, Referenser)</p>
+                              <p>Kontaktformulär direkt till din e-post</p>
+                              <p>Grundläggande SEO (så du syns på Google)</p>
+                              <p>Koppling till Google Maps & sociala medier</p>
+                              <p>Snabb laddning</p>
+                              <p>Enkel manual så du kan uppdatera själv</p>
                             </div>
                           </div>
 
@@ -147,7 +147,7 @@ const About = () => {
 
                           <div>
                             <h3 className="text-xl font-semibold mb-4">Drift & support (valfritt abonnemang)</h3>
-                            <p className="mb-2">🔒 <strong>Vill du slippa tänka på tekniken?</strong></p>
+                            <p className="mb-2"><strong>Vill du slippa tänka på tekniken?</strong></p>
                             <p className="mb-2">Jag erbjuder trygga underhållspaket:</p>
                             <div className="space-y-2 ml-4">
                               <p><strong>490 kr/mån</strong> – Webbhotell, säkerhetskopiering, uppdateringar, enklare support</p>
@@ -158,11 +158,11 @@ const About = () => {
                           <div>
                             <h3 className="text-xl font-semibold mb-4">Så går det till</h3>
                             <div className="space-y-2">
-                              <p>1️⃣ Vi bokar ett kort möte och går igenom dina behov</p>
-                              <p>2️⃣ Du skickar in material (texter, logotyp, ev. bilder)</p>
-                              <p>3️⃣ Jag bygger sidan och skickar en förhandsvisning</p>
-                              <p>4️⃣ Du ger feedback → vi justerar → sidan lanseras!</p>
-                              <p className="mt-4"><strong>📅 Normal leveranstid:</strong> 2–4 veckor</p>
+                              <p>1. Vi bokar ett kort möte och går igenom dina behov</p>
+                              <p>2. Du skickar in material (texter, logotyp, ev. bilder)</p>
+                              <p>3. Jag bygger sidan och skickar en förhandsvisning</p>
+                              <p>4. Du ger feedback → vi justerar → sidan lanseras!</p>
+                              <p className="mt-4"><strong>Normal leveranstid:</strong> 2–4 veckor</p>
                             </div>
                           </div>
 
@@ -186,7 +186,7 @@ const About = () => {
 
                           <div className="bg-primary/5 p-4 rounded-lg">
                             <p className="text-center font-semibold">
-                              👉 Redo att ta nästa steg?<br/>
+                              Redo att ta nästa steg?<br/>
                               Kontakta mig idag så bygger vi en hemsida som stärker ditt företag!
                             </p>
                           </div>
