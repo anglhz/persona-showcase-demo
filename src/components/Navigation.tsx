@@ -18,6 +18,7 @@ const Navigation = () => {
   const navItems = [
     { name: "Hem", href: "#home" },
     { name: "Om", href: "#about" },
+    { name: "Mina Erbjudanden", href: "#services" },
     { name: "Projekt", href: "#projects" },
     { name: "Kontakt", href: "#contact" }
   ];

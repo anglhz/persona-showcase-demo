@@ -104,7 +104,53 @@ const About = () => {
         </div>
 
         {/* Services */}
-        <div>
+        <div id="services">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold mb-4">
+              <span className="gradient-text">Lanseringserbjudande</span>
+            </h3>
+            <p className="text-xl text-muted-foreground">Begränsat erbjudande för nya kunder</p>
+          </div>
+          
+          <Card className="max-w-md mx-auto p-8 gradient-card shadow-glow border-primary/20 mb-16">
+            <div className="text-center">
+              <div className="text-primary mb-4">
+                <Smartphone className="h-12 w-12 mx-auto" />
+              </div>
+              <h4 className="text-2xl font-bold mb-2">Landningssida</h4>
+              <div className="mb-4">
+                <span className="text-4xl font-bold gradient-text">3000 kr</span>
+                <p className="text-sm text-muted-foreground line-through">Ordinarie 5000 kr</p>
+              </div>
+              <p className="text-muted-foreground mb-6">
+                Perfekt för dig som vill komma igång snabbt med en professionell närvaro online.
+              </p>
+              <div className="text-left mb-6">
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
+                    Modern design på en sida
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
+                    Mobiloptimerad
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
+                    Kontaktformulär
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
+                    Grundläggande SEO
+                  </li>
+                </ul>
+              </div>
+              <Button className="w-full">
+                Passa på nu!
+              </Button>
+            </div>
+          </Card>
+
           <h3 className="text-3xl font-bold text-center mb-12">
             Vad jag <span className="gradient-text">Erbjuder</span>
           </h3>
@@ -268,54 +314,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Launch Offer */}
-        <div className="mt-16">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-4">
-              <span className="gradient-text">Lanseringserbjudande</span>
-            </h3>
-            <p className="text-xl text-muted-foreground">Begränsat erbjudande för nya kunder</p>
-          </div>
-          
-          <Card className="max-w-md mx-auto p-8 gradient-card shadow-glow border-primary/20">
-            <div className="text-center">
-              <div className="text-primary mb-4">
-                <Smartphone className="h-12 w-12 mx-auto" />
-              </div>
-              <h4 className="text-2xl font-bold mb-2">Landningssida</h4>
-              <div className="mb-4">
-                <span className="text-4xl font-bold gradient-text">3000 kr</span>
-                <p className="text-sm text-muted-foreground line-through">Ordinarie 5000 kr</p>
-              </div>
-              <p className="text-muted-foreground mb-6">
-                Perfekt för dig som vill komma igång snabbt med en professionell närvaro online.
-              </p>
-              <div className="text-left mb-6">
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
-                    Modern design på en sida
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
-                    Mobiloptimerad
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
-                    Kontaktformulär
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3" />
-                    Grundläggande SEO
-                  </li>
-                </ul>
-              </div>
-              <Button className="w-full">
-                Passa på nu!
-              </Button>
-            </div>
-          </Card>
-        </div>
 
         {/* FAQ Section */}
         <div className="mt-16">
