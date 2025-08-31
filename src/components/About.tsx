@@ -103,6 +103,26 @@ const About = () => {
           </div>
         </div>
 
+        {/* Service Introduction */}
+        <div className="text-center mb-12">
+          <h3 className="text-3xl font-bold mb-6">
+            Mina <span className="gradient-text">Tjänster</span>
+          </h3>
+          <div className="max-w-4xl mx-auto space-y-4 text-lg text-muted-foreground">
+            <p>
+              Jag erbjuder tre tydliga paketlösningar beroende på dina behov – från enkel landningssida till full 
+              företagswebbplats. Alla paket är mobilanpassade, SEO-optimerade och levereras med en enkel 
+              manual så att du själv kan uppdatera innehållet.
+            </p>
+            <p>
+              Jag kan även hjälpa dig att köpa och sätta upp en domän om du inte redan har det.
+            </p>
+            <p className="font-semibold">
+              Alla paket kan anpassas efter behov. Kontakta mig idag så tar vi fram rätt lösning för dig!
+            </p>
+          </div>
+        </div>
+
         {/* Services */}
         <div id="services">
           <div className="text-center mb-8">
