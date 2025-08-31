@@ -65,7 +65,7 @@ const About = () => {
             Om <span className="gradient-text">Mig</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Jag är en självlärd hobby utvecklare med passion för att skapa digitala lösningar 
+            Jag är en självlärd hobbyutvecklare med passion för att skapa digitala lösningar 
             som verkligen gör skillnad för människor och företag.
           </p>
         </div>
