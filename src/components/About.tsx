@@ -35,25 +35,25 @@ const About = () => {
 
   const services = [
     {
-      icon: <Globe className="h-8 w-8" />,
-      title: "Företagswebbplatser",
-      description: "Professionella webbplatser som stärker ditt varumärke och attraherar nya kunder. Modern design med fokus på konvertering och användarvänlighet.",
-      features: ["Responsiv design", "SEO-optimerad", "Snabb laddning", "Kontaktformulär"],
-      price: "Från 7000 kr"
-    },
-    // {
-    //   icon: <Palette className="h-8 w-8" />,
-    //   title: "Portfolio & Personliga sidor",
-    //   description: "Skapa ett starkt digitalt intryck med en personlig webbplats som visar upp dina färdigheter och uppnåelser på bästa möjliga sätt.",
-    //   features: ["Projektgalleri", "CV-sektion", "Kontaktmöjligheter", "Blogfunktion", "Social media integration", "Mobil-optimerad"],
-    //   price: "Från 5000 kr"
-    // },
-    {
       icon: <Smartphone className="h-8 w-8" />,
       title: "Landningssidor",
       description: "En enkel men kraftfull webbplats på en sida – perfekt för kampanjer, småföretag eller tjänster som behöver ett snabbt och tydligt digitalt avtryck.",
-      features: ["Modern design", "Upp till 4 sektioner", "Mobiloptimerad", "Kontaktformulär", "Grundläggande SEO", "Manual"],
+      features: ["Modern design", "Upp till 4 sektioner", "Mobiloptimerad", "Kontaktformulär", "Grundläggande SEO"],
+      price: "Från 4000 kr"
+    },
+    {
+      icon: <Palette className="h-8 w-8" />,
+      title: "Portfolio & personliga sidor",
+      description: "Skapa ett starkt digitalt intryck med en personlig webbplats som visar upp dina färdigheter och uppnåelser på bästa möjliga sätt.",
+      features: ["Projektgalleri", "CV-sektion", "Bloggfunktion", "Kontaktformulär + sociala medier", "Mobiloptimerad & SEO"],
       price: "Från 5000 kr"
+    },
+    {
+      icon: <Globe className="h-8 w-8" />,
+      title: "Företagswebbplatser",
+      description: "Professionella webbplatser som stärker ditt varumärke och attraherar nya kunder. Modern design med fokus på konvertering och användarvänlighet.",
+      features: ["Anpassad design", "Upp till 5 sidor", "Kontaktformulär & Google Maps", "Grundläggande SEO", "Mobiloptimering"],
+      price: "Från 7000 kr"
     }
   ];
 
@@ -154,7 +154,7 @@ const About = () => {
           <h3 className="text-3xl font-bold text-center mb-12">
             Vad jag <span className="gradient-text">Erbjuder</span>
           </h3>
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card
                 key={service.title}
@@ -199,36 +199,29 @@ const About = () => {
                             </p>
 
                             <div>
-                              <h3 className="text-xl font-semibold mb-4">Vad du får i baspaketet – från 7 000 kr</h3>
+                              <h3 className="text-xl font-semibold mb-4">Ingår – från 7 000 kr</h3>
                               <div className="grid gap-2">
-                                <p>Modern design, anpassad efter ditt företag</p>
-                                <p>Mobilvänlig (responsiv) layout</p>
-                                <p>Upp till 5 sidor (Start, Tjänster, Om oss, Kontakt, Referenser)</p>
-                                <p>Kontaktformulär direkt till din e-post</p>
-                                <p>Grundläggande SEO (så du syns på Google)</p>
-                                <p>Koppling till Google Maps & sociala medier</p>
-                                <p>Snabb laddning</p>
-                                <p>Enkel manual så du kan uppdatera själv</p>
+                                <p>• Anpassad design med upp till 5 sidor (Start, Tjänster, Om oss, Kontakt, Referenser)</p>
+                                <p>• Kontaktformulär, Google Maps & sociala medier-koppling</p>
+                                <p>• Grundläggande SEO</p>
+                                <p>• Snabb laddning och mobiloptimering</p>
                               </div>
                             </div>
 
                             <div>
-                              <h3 className="text-xl font-semibold mb-4">Prisstruktur</h3>
+                              <h3 className="text-xl font-semibold mb-4">Tillval</h3>
                               <div className="space-y-2">
-                                <p><strong>Baspaket:</strong> från 7 000 kr</p>
-                                <p><strong>Extra sidor:</strong> 1 000 kr/st</p>
-                                <p><strong>Webbshop eller bokningssystem:</strong> offert</p>
-                                <p><strong>Textproduktion, fotografering, logotyp:</strong> offert</p>
+                                <p>• Extra sidor: 1 000 kr/st</p>
+                                <p>• Textproduktion, fotografering, logotyp: offert</p>
+                                <p>• Domänregistrering & uppsättning: ca 200–300 kr/år (.se, .com m.fl.)</p>
                               </div>
                             </div>
 
                             <div>
-                              <h3 className="text-xl font-semibold mb-4">Drift & support (valfritt abonnemang)</h3>
-                              <p className="mb-2"><strong>Vill du slippa tänka på tekniken?</strong></p>
-                              <p className="mb-2">Jag erbjuder trygga underhållspaket:</p>
-                              <div className="space-y-2 ml-4">
-                                <p><strong>490 kr/mån</strong> – Webbhotell, säkerhetskopiering, uppdateringar, enklare support</p>
-                                <p><strong>990 kr/mån</strong> – Som ovan + 1 timmes innehållsändringar per månad</p>
+                              <h3 className="text-xl font-semibold mb-4">Drift & support (valfritt)</h3>
+                              <div className="space-y-2">
+                                <p>• 490 kr/mån: hosting, backup, uppdateringar, enklare support</p>
+                                <p>• 990 kr/mån: som ovan + 1 timme ändringar/mån</p>
                               </div>
                             </div>
 
@@ -239,7 +232,7 @@ const About = () => {
                                 <p>2. Du skickar in material (texter, logotyp, ev. bilder)</p>
                                 <p>3. Jag bygger sidan och skickar en förhandsvisning</p>
                                 <p>4. Du ger feedback → vi justerar → sidan lanseras!</p>
-                                <p className="mt-4"><strong>Normal leveranstid:</strong> 2–4 veckor</p>
+                                <p className="mt-4"><strong>Leveranstid:</strong> ca 2–4 veckor</p>
                               </div>
                             </div>
 
@@ -265,31 +258,29 @@ const About = () => {
                             </p>
 
                             <div>
-                              <h3 className="text-xl font-semibold mb-4">Vad du får – från 5 000 kr</h3>
+                              <h3 className="text-xl font-semibold mb-4">Ingår – från 4 000 kr</h3>
                               <div className="grid gap-2">
-                                <p>Modern design med fokus på tydlig struktur</p>
-                                <p>Upp till 4 sektioner (t.ex. Hero, Om, Tjänster/erbjudande, Kontakt)</p>
-                                <p>Mobiloptimerad och snabb</p>
-                                <p>Kontaktformulär direkt till e-post</p>
-                                <p>Grundläggande SEO (titlar, beskrivningar)</p>
-                                <p>Instruktion/manual för att själv kunna ändra text och bilder</p>
+                                <p>• Modern design med upp till 4 sektioner (Hero, Om, Tjänster, Kontakt)</p>
+                                <p>• Kontaktformulär kopplat till e-post</p>
+                                <p>• Mobiloptimerad och snabb</p>
+                                <p>• Grundläggande SEO</p>
                               </div>
                             </div>
 
                             <div>
-                              <h3 className="text-xl font-semibold mb-4">Prisstruktur</h3>
+                              <h3 className="text-xl font-semibold mb-4">Tillval</h3>
                               <div className="space-y-2">
-                                <p><strong>Baspaket:</strong> från 5 000 kr</p>
-                                <p><strong>Extra sektion:</strong> 800–1 000 kr/st</p>
-                                <p><strong>Tillägg:</strong> bokningsformulär, enkät, galleri: offert</p>
+                                <p>• Extra sektion: 800–1 000 kr</p>
+                                <p>• Bokningsformulär, enkät eller galleri: offert</p>
+                                <p>• Domänregistrering & uppsättning: ca 200–300 kr/år (.se, .com m.fl.)</p>
                               </div>
                             </div>
 
                             <div>
                               <h3 className="text-xl font-semibold mb-4">Drift & support (valfritt)</h3>
-                              <div className="space-y-2 ml-4">
-                                <p><strong>250 kr/mån:</strong> hosting, backup, uppdateringar, enklare support</p>
-                                <p><strong>590 kr/mån:</strong> som ovan + 30 min ändringar/mån</p>
+                              <div className="space-y-2">
+                                <p>• 250 kr/mån: hosting, backup, uppdateringar, enklare support</p>
+                                <p>• 590 kr/mån: som ovan + 30 min ändringar/mån</p>
                               </div>
                             </div>
 
@@ -300,7 +291,60 @@ const About = () => {
                                 <p>Du skickar material (text, logotyp, ev. bilder)</p>
                                 <p>Jag bygger sidan och skickar förhandsvisning</p>
                                 <p>Feedback → justering → lansering</p>
-                                <p className="mt-4"><strong>Leveranstid:</strong> ca 1 vecka med komplett material.</p>
+                                <p className="mt-4"><strong>Leveranstid:</strong> ca 1 vecka</p>
+                              </div>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                      
+                      {service.title === "Portfolio & personliga sidor" && (
+                        <>
+                          <DialogHeader>
+                            <DialogTitle className="text-2xl mb-4">Portfolio & personliga sidor</DialogTitle>
+                          </DialogHeader>
+                          
+                          <div className="space-y-6">
+                            <p className="text-muted-foreground">
+                              Skapa ett starkt digitalt intryck med en personlig webbplats som visar upp dina färdigheter och uppnåelser på bästa möjliga sätt.
+                            </p>
+
+                            <div>
+                              <h3 className="text-xl font-semibold mb-4">Ingår – från 5 000 kr</h3>
+                              <div className="grid gap-2">
+                                <p>• Projektgalleri</p>
+                                <p>• CV-sektion (erfarenhet, kompetenser, utbildning)</p>
+                                <p>• Bloggfunktion</p>
+                                <p>• Kontaktformulär + sociala medier-integration</p>
+                                <p>• Mobiloptimerad & SEO-anpassad</p>
+                              </div>
+                            </div>
+
+                            <div>
+                              <h3 className="text-xl font-semibold mb-4">Tillval</h3>
+                              <div className="space-y-2">
+                                <p>• Extra sektion/sida: 700–900 kr</p>
+                                <p>• Extra funktioner: flerspråk, animeringar, grafik: offert</p>
+                                <p>• Domänregistrering & uppsättning: ca 200–300 kr/år (.se, .com m.fl.)</p>
+                              </div>
+                            </div>
+
+                            <div>
+                              <h3 className="text-xl font-semibold mb-4">Drift & support (valfritt)</h3>
+                              <div className="space-y-2">
+                                <p>• 290 kr/mån: hosting, backup, uppdateringar, enklare support</p>
+                                <p>• 690 kr/mån: som ovan + 30 min ändringar/mån</p>
+                              </div>
+                            </div>
+
+                            <div>
+                              <h3 className="text-xl font-semibold mb-4">Så går det till</h3>
+                              <div className="space-y-2">
+                                <p>1. Vi diskuterar dina mål och önskemål</p>
+                                <p>2. Du samlar material (projekt, CV, bilder)</p>
+                                <p>3. Jag skapar din personliga webbplats</p>
+                                <p>4. Feedback och justeringar</p>
+                                <p className="mt-4"><strong>Leveranstid:</strong> ca 1–2 veckor</p>
                               </div>
                             </div>
                           </div>
