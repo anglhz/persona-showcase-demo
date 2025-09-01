@@ -32,7 +32,16 @@ const Hero = () => {
             </div>
             
             <div className="flex justify-center lg:justify-start mb-8">
-              <Button size="lg" className="group shadow-glow hover:shadow-hero transition-all duration-300">
+              <Button 
+                size="lg" 
+                className="group shadow-glow hover:shadow-hero transition-all duration-300"
+                onClick={() => {
+                  const element = document.querySelector('#projects');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Se mina projekt
                 <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
               </Button>

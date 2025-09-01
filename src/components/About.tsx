@@ -123,6 +123,27 @@ const About = () => {
           </div>
         </div>
 
+        {/* FAQ Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-6">
+              Vanliga <span className="gradient-text">Frågor</span>
+            </h3>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Här hittar du svar på de vanligaste frågorna om mina tjänster
+            </p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqs.map((faq, index) => (
+              <Card key={index} className="p-6 gradient-card shadow-card hover:shadow-glow transition-all duration-300">
+                <h4 className="text-lg font-semibold mb-3">{faq.question}</h4>
+                <p className="text-muted-foreground">{faq.answer}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Services */}
         <div id="services">
           <div className="text-center mb-8">
@@ -165,9 +186,17 @@ const About = () => {
                   </li>
                 </ul>
               </div>
-              <Button className="w-full">
-                Passa på nu!
-              </Button>
+          <button
+            onClick={() => {
+              const element = document.querySelector('#contact');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-colors shadow-glow hover:shadow-hero"
+          >
+            Starta ditt projekt idag
+          </button>
             </div>
           </Card>
 
@@ -372,24 +401,6 @@ const About = () => {
                       )}
                     </DialogContent>
                   </Dialog>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-
-        {/* FAQ Section */}
-        <div className="mt-16">
-          <h3 className="text-3xl font-bold text-center mb-12">
-            Vanliga <span className="gradient-text">Frågor</span>
-          </h3>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="p-6 gradient-card">
-                <div className="space-y-2">
-                  <h4 className="text-lg font-semibold">{faq.question}</h4>
-                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
               </Card>
             ))}

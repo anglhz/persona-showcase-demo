@@ -7,17 +7,19 @@ const Footer = () => {
   const quickLinks = [
     { name: "Hem", href: "#home" },
     { name: "Om", href: "#about" },
+    { name: "Tjänster", href: "#services" },
     { name: "Projekt", href: "#projects" },
-    { name: "Blog", href: "#blog" },
+    { name: "Process", href: "#process" },
+    { name: "Omdömen", href: "#testimonials" },
     { name: "Kontakt", href: "#contact" }
   ];
 
   const services = [
-    "Frontend Utveckling",
-    "Backend Utveckling", 
-    "UI/UX Design",
-    "Mobil Utveckling",
-    "Konsultation"
+    "Landningssidor",
+    "Portfolio webbsidor", 
+    "Företagswebbplatser",
+    "SEO Optimering",
+    "Drift & Support"
   ];
 
   const scrollToSection = (href: string) => {
@@ -39,6 +41,35 @@ const Footer = () => {
               Webbutvecklare och designer som skapar digitala upplevelser som 
               kombinerar funktionalitet med vacker design. Baserad i Eskilstuna, Sverige.
             </p>
+            
+            {/* Social Media Links */}
+            <div className="flex gap-4">
+              <a 
+                href="mailto:tommy@fertekz.com"
+                className="p-2 rounded-full bg-primary/20 text-primary hover:bg-primary/30 transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://github.com/tommyfertkez"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-primary/20 text-primary hover:bg-primary/30 transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://linkedin.com/in/tommyfertkez"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-primary/20 text-primary hover:bg-primary/30 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -75,10 +106,15 @@ const Footer = () => {
 
         {/* Bottom Footer */}
         <div className="border-t border-primary/20 py-6">
-          <div className="flex justify-center">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} Alla rättigheter förbehållna.
+              © {currentYear} Tommy Fertekz. Alla rättigheter förbehållna.
             </p>
+            <div className="flex items-center gap-1 text-muted-foreground text-sm">
+              <span>Skapad med</span>
+              <Heart className="h-4 w-4 text-red-500 animate-pulse" />
+              <span>i Sverige</span>
+            </div>
           </div>
         </div>
       </div>
