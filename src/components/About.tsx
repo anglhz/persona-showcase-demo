@@ -92,7 +92,7 @@ const About = () => {
             <p className="text-muted-foreground">
               Jag kan även hjälpa dig att köpa och sätta upp en domän om du inte redan har det.
             </p>
-            <p className="font-semibold">
+            <p className="text-muted-foreground font-semibold">
               Alla paket kan anpassas efter behov. Kontakta mig idag så tar vi fram rätt lösning för dig!
             </p>
             {/* Skills */}
