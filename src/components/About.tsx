@@ -158,7 +158,13 @@ const About = () => {
             onClick={() => {
               const element = document.querySelector('#contact');
               if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - 80;
+                
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
               }
             }}
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-colors shadow-glow hover:shadow-hero"
