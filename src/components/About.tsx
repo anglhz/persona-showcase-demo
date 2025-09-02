@@ -83,23 +83,18 @@ const About = () => {
               Idag fokuserar jag på att hjälpa företag och individer att etablera sin digitala 
               närvaro genom professionella webbplatser och portfolios.
             </p>
-            
-            {/* Skills */}
-            <div>
-              <h4 className="text-lg font-semibold mb-3">Tekniska Färdigheter</h4>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                  <Badge
-                    key={skill}
-                    variant="secondary"
-                    className="hover:bg-primary/20 transition-colors"
-                    style={{animationDelay: `${index * 0.1}s`}}
-                  >
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
+            <h3 className="text-2xl font-bold mb-4">Min Tjänster</h3>
+            <p>
+              Jag erbjuder tre tydliga paketlösningar beroende på dina behov – från enkel landningssida till full 
+              företagswebbplats. Alla paket är mobilanpassade, SEO-optimerade och levereras med en enkel 
+              manual så att du själv kan uppdatera innehållet.
+            </p>
+            <p>
+              Jag kan även hjälpa dig att köpa och sätta upp en domän om du inte redan har det.
+            </p>
+            <p className="font-semibold">
+              Alla paket kan anpassas efter behov. Kontakta mig idag så tar vi fram rätt lösning för dig!
+            </p>
           </div>
         </div>
 
@@ -123,29 +118,8 @@ const About = () => {
           </div>
         </div>
 
-        {/* FAQ Section */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-6">
-              Vanliga <span className="gradient-text">Frågor</span>
-            </h3>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Här hittar du svar på de vanligaste frågorna om mina tjänster
-            </p>
-          </div>
-          
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="p-6 gradient-card shadow-card hover:shadow-glow transition-all duration-300">
-                <h4 className="text-lg font-semibold mb-3">{faq.question}</h4>
-                <p className="text-muted-foreground">{faq.answer}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-
         {/* Services */}
-        <div id="services">
+        <div id="services" className="mb-16">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold mb-4">
               <span className="gradient-text">Lanseringserbjudande</span>
@@ -203,7 +177,7 @@ const About = () => {
           <h3 className="text-3xl font-bold text-center mb-12">
             Vad jag <span className="gradient-text">Erbjuder</span>
           </h3>
-          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
               <Card
                 key={service.title}
@@ -403,6 +377,44 @@ const About = () => {
                   </Dialog>
                 </div>
               </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-6">
+              Vanliga <span className="gradient-text">Frågor</span>
+            </h3>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Här hittar du svar på de vanligaste frågorna om mina tjänster
+            </p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqs.map((faq, index) => (
+              <Card key={index} className="p-6 gradient-card shadow-card hover:shadow-glow transition-all duration-300">
+                <h4 className="text-lg font-semibold mb-3">{faq.question}</h4>
+                <p className="text-muted-foreground">{faq.answer}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Skills */}
+        <div>
+          <h4 className="text-lg font-semibold mb-3">Tekniska Färdigheter</h4>
+          <div className="flex flex-wrap gap-2">
+            {skills.map((skill, index) => (
+              <Badge
+                key={skill}
+                variant="secondary"
+                className="hover:bg-primary/20 transition-colors"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
+                {skill}
+              </Badge>
             ))}
           </div>
         </div>
