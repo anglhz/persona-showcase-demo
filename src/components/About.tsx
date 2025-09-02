@@ -98,23 +98,20 @@ const About = () => {
           </div>
         </div>
 
-        {/* Service Introduction */}
-        <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold mb-6">
-            Mina <span className="gradient-text">Tjänster</span>
-          </h3>
-          <div className="max-w-4xl mx-auto space-y-4 text-lg text-muted-foreground">
-            <p>
-              Jag erbjuder tre tydliga paketlösningar beroende på dina behov – från enkel landningssida till full 
-              företagswebbplats. Alla paket är mobilanpassade, SEO-optimerade och levereras med en enkel 
-              manual så att du själv kan uppdatera innehållet.
-            </p>
-            <p>
-              Jag kan även hjälpa dig att köpa och sätta upp en domän om du inte redan har det.
-            </p>
-            <p className="font-semibold">
-              Alla paket kan anpassas efter behov. Kontakta mig idag så tar vi fram rätt lösning för dig!
-            </p>
+        {/* Skills */}
+        <div>
+          <h4 className="text-lg font-semibold mb-3">Tekniska Färdigheter</h4>
+          <div className="flex flex-wrap gap-2">
+            {skills.map((skill, index) => (
+              <Badge
+                key={skill}
+                variant="secondary"
+                className="hover:bg-primary/20 transition-colors"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
+                {skill}
+              </Badge>
+            ))}
           </div>
         </div>
 
@@ -398,23 +395,6 @@ const About = () => {
                 <h4 className="text-lg font-semibold mb-3">{faq.question}</h4>
                 <p className="text-muted-foreground">{faq.answer}</p>
               </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Skills */}
-        <div>
-          <h4 className="text-lg font-semibold mb-3">Tekniska Färdigheter</h4>
-          <div className="flex flex-wrap gap-2">
-            {skills.map((skill, index) => (
-              <Badge
-                key={skill}
-                variant="secondary"
-                className="hover:bg-primary/20 transition-colors"
-                style={{animationDelay: `${index * 0.1}s`}}
-              >
-                {skill}
-              </Badge>
             ))}
           </div>
         </div>
