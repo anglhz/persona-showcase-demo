@@ -95,22 +95,26 @@ const About = () => {
             <p className="font-semibold">
               Alla paket kan anpassas efter behov. Kontakta mig idag så tar vi fram rätt lösning för dig!
             </p>
-            {/* Skills */}
-            <h4 className="text-lg font-semibold mb-3">Tekniska Färdigheter</h4>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                <Badge
-                  key={skill}
-                  variant="secondary"
-                  className="hover:bg-primary/20 transition-colors"
-                  style={{animationDelay: `${index * 0.1}s`}}
-                  >
-                  {skill}
-                </Badge>
-              ))}
           </div>
         </div>
-          
+
+        {/* Skills */}
+        <div>
+          <h4 className="text-lg font-semibold mb-3">Tekniska Färdigheter</h4>
+          <div className="flex flex-wrap gap-2">
+            {skills.map((skill, index) => (
+              <Badge
+                key={skill}
+                variant="secondary"
+                className="hover:bg-primary/20 transition-colors"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
+                {skill}
+              </Badge>
+            ))}
+          </div>
+        </div>
+
         {/* Services */}
         <div id="services" className="mb-16">
           <div className="text-center mb-8">
