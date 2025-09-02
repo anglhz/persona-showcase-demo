@@ -25,7 +25,7 @@ const Projects = () => {
     {
       title: "Hakuna Potata",
       description: "Snabbmatskedja baserat i USA med inriktning bakpotatis.",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800",
+      image: "/lovable-uploads/4ab06dc0-7ebe-476e-808c-88dddaad1f48.png",
       tech: ["React Native", "Express", "MongoDB", "IoT"],
       github: "#",
       live: "https://preview--hakuna-potata-fiesta-web.lovable.app"
