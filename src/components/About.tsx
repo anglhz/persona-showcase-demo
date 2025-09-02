@@ -84,12 +84,12 @@ const About = () => {
               närvaro genom professionella webbplatser och portfolios.
             </p>
             <h3 className="text-2xl font-bold mb-4">Min Tjänster</h3>
-            <p>
+            <p className="text-muted-foreground">
               Jag erbjuder tre tydliga paketlösningar beroende på dina behov – från enkel landningssida till full 
               företagswebbplats. Alla paket är mobilanpassade, SEO-optimerade och levereras med en enkel 
               manual så att du själv kan uppdatera innehållet.
             </p>
-            <p>
+            <p className="text-muted-foreground">
               Jag kan även hjälpa dig att köpa och sätta upp en domän om du inte redan har det.
             </p>
             <p className="font-semibold">
