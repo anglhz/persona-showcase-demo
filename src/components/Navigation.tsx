@@ -53,7 +53,7 @@ const Navigation = () => {
               className="text-2xl font-black gradient-text hover:scale-105 transition-transform tracking-wider"
               style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
             >
-              Fertekz.com
+              Fertekz IT
             </button>
           </div>
 

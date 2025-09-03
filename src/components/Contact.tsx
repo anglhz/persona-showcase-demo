@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 interface FormData {
   name: string;
@@ -18,7 +19,7 @@ const Contact = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      // Send notification to ntfy
+      // Send notification to ntfy (keep existing functionality)
       await fetch('https://ntfy.sh/Fertekz-com', {
         method: 'POST',
         headers: {
@@ -27,9 +28,20 @@ const Contact = () => {
         body: `Nytt meddelande från ${data.name}\n\nEmail: ${data.email}\nÄmne: ${data.subject}\n\n${data.message}`,
       });
 
+      // Send email via Supabase Edge Function
+      await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message
+        }
+      });
+
       toast.success("Meddelande skickat! Jag återkommer inom 24 timmar.");
       reset();
     } catch (error) {
+      console.error('Contact form error:', error);
       toast.error("Något gick fel. Försök igen senare.");
     }
   };
