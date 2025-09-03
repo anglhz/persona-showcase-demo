@@ -39,14 +39,14 @@ const About = () => {
       title: "Landningssidor",
       description: "En enkel men kraftfull webbplats på en sida – perfekt för kampanjer, småföretag eller tjänster som behöver ett snabbt och tydligt digitalt avtryck.",
       features: ["Modern design", "Upp till 4 sektioner", "Mobiloptimerad", "Kontaktformulär", "Grundläggande SEO"],
-      price: "Från 4000 kr"
+      price: "Från 5000 kr"
     },
     {
       icon: <Palette className="h-8 w-8" />,
       title: "Portfolio & personliga sidor",
       description: "Skapa ett starkt digitalt intryck med en personlig webbplats som visar upp dina färdigheter och uppnåelser på bästa möjliga sätt.",
       features: ["Projektgalleri", "CV-sektion", "Bloggfunktion", "Kontaktformulär + sociala medier", "Mobiloptimerad & SEO"],
-      price: "Från 5000 kr"
+      price: "Från 6000 kr"
     },
     {
       icon: <Globe className="h-8 w-8" />,
