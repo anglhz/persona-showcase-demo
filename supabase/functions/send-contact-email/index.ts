@@ -3,11 +3,21 @@ import { Resend } from "npm:resend@2.0.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
-// Secure CORS headers - restrict to your domain only
+// Secure CORS headers - restricted for security
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "*", // TODO: Replace with your actual domain
-  "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Origin": "https://your-domain.com", // Update this to your actual domain
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Max-Age": "86400", // 24 hours
+};
+
+// Security headers to enhance protection
+const securityHeaders = {
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "DENY",
+  "X-XSS-Protection": "1; mode=block",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Content-Security-Policy": "default-src 'none'; frame-ancestors 'none';",
 };
 
 interface ContactEmailRequest {
@@ -109,7 +119,7 @@ function checkRateLimit(ip: string): boolean {
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
+    return new Response(null, { headers: { ...corsHeaders, ...securityHeaders } });
   }
 
   try {
@@ -120,12 +130,12 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Check rate limit
     if (!checkRateLimit(clientIp)) {
-      console.warn(`Rate limit exceeded for IP: ${clientIp}`);
+      console.warn(`Security Event - Rate limit exceeded for IP: ${clientIp}`);
       return new Response(
         JSON.stringify({ error: "Too many requests. Please try again later." }),
         {
           status: 429,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...corsHeaders, ...securityHeaders },
         }
       );
     }
@@ -135,12 +145,12 @@ const handler = async (req: Request): Promise<Response> => {
     // Validate input
     const validation = validateInput(requestData);
     if (!validation.isValid) {
-      console.warn(`Validation failed for IP: ${clientIp}`, validation.errors);
+      console.warn(`Security Event - Validation failed for IP: ${clientIp}`, validation.errors);
       return new Response(
         JSON.stringify({ error: "Invalid input", details: validation.errors }),
         {
           status: 400,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+          headers: { "Content-Type": "application/json", ...corsHeaders, ...securityHeaders },
         }
       );
     }
@@ -179,7 +189,7 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    console.log("Email sent successfully to tommy@fertekz.com");
+    console.log("Security Event - Email sent successfully to tommy@fertekz.com");
 
     // Don't return sensitive email response data
     return new Response(JSON.stringify({ success: true, message: "Email sent successfully" }), {
@@ -187,15 +197,16 @@ const handler = async (req: Request): Promise<Response> => {
       headers: {
         "Content-Type": "application/json",
         ...corsHeaders,
+        ...securityHeaders,
       },
     });
   } catch (error: any) {
-    console.error("Error in send-contact-email function:", error.message);
+    console.error("Security Event - Error in send-contact-email function:", error.message);
     return new Response(
       JSON.stringify({ error: "Internal server error" }),
       {
         status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
+        headers: { "Content-Type": "application/json", ...corsHeaders, ...securityHeaders },
       }
     );
   }
