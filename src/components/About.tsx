@@ -333,7 +333,7 @@ const About = () => {
                             </p>
 
                             <div>
-                              <h3 className="text-xl font-semibold mb-4">Ingår – från 5 000 kr</h3>
+                              <h3 className="text-xl font-semibold mb-4">Ingår – från 6 000 kr</h3>
                               <div className="grid gap-2">
                                 <p>• Projektgalleri</p>
                                 <p>• CV-sektion (erfarenhet, kompetenser, utbildning)</p>
