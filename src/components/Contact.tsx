@@ -6,18 +6,30 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
 
 interface FormData {
   name: string;
   email: string;
   subject: string;
   message: string;
+  // Honeypot field for spam protection
+  website?: string;
 }
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
+    // Check honeypot field - if filled, it's likely spam
+    if (data.website) {
+      console.warn("Honeypot field filled, likely spam");
+      return;
+    }
+
+    setIsSubmitting(true);
+    
     try {
       // Send notification to ntfy (keep existing functionality)
       await fetch('https://ntfy.sh/Fertekz-com', {
@@ -29,7 +41,7 @@ const Contact = () => {
       });
 
       // Send email via Supabase Edge Function
-      await supabase.functions.invoke('send-contact-email', {
+      const response = await supabase.functions.invoke('send-contact-email', {
         body: {
           name: data.name,
           email: data.email,
@@ -38,11 +50,27 @@ const Contact = () => {
         }
       });
 
+      if (response.error) {
+        throw response.error;
+      }
+
       toast.success("Meddelande skickat! Jag återkommer inom 24 timmar.");
       reset();
-    } catch (error) {
+    } catch (error: any) {
       console.error('Contact form error:', error);
-      toast.error("Något gick fel. Försök igen senare.");
+      
+      // Handle specific error types
+      if (error.message?.includes('Too many requests')) {
+        toast.error("För många förfrågningar. Försök igen om 15 minuter.");
+      } else if (error.message?.includes('Invalid input')) {
+        toast.error("Ogiltig inmatning. Kontrollera dina uppgifter och försök igen.");
+      } else if (error.message?.includes('Rate limit')) {
+        toast.error("För många meddelanden skickade. Vänta en stund innan du försöker igen.");
+      } else {
+        toast.error("Något gick fel. Försök igen senare.");
+      }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -114,13 +142,27 @@ const Contact = () => {
           <Card className="p-8 gradient-card shadow-hero">
             <h3 className="text-2xl font-bold mb-6">Skicka ett meddelande</h3>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              {/* Honeypot field - hidden from users, used to detect spam */}
+              <input
+                {...register("website")}
+                type="text"
+                className="absolute -left-9999px opacity-0"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium mb-2 block">Namn</label>
                   <Input 
-                    {...register("name", { required: "Namn är obligatoriskt" })}
+                    {...register("name", { 
+                      required: "Namn är obligatoriskt",
+                      minLength: { value: 2, message: "Namn måste vara minst 2 tecken" },
+                      maxLength: { value: 100, message: "Namn får inte vara längre än 100 tecken" }
+                    })}
                     placeholder="Ditt namn"
                     className="bg-background/50 border-primary/30 focus:border-primary"
+                    disabled={isSubmitting}
                   />
                   {errors.name && <p className="text-destructive text-sm mt-1">{errors.name.message}</p>}
                 </div>
@@ -129,14 +171,16 @@ const Contact = () => {
                   <Input 
                     {...register("email", { 
                       required: "Email är obligatoriskt",
+                      maxLength: { value: 254, message: "Email får inte vara längre än 254 tecken" },
                       pattern: {
-                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                         message: "Ogiltig email-adress"
                       }
                     })}
                     type="email"
                     placeholder="din@email.se"
                     className="bg-background/50 border-primary/30 focus:border-primary"
+                    disabled={isSubmitting}
                   />
                   {errors.email && <p className="text-destructive text-sm mt-1">{errors.email.message}</p>}
                 </div>
@@ -145,9 +189,14 @@ const Contact = () => {
               <div>
                 <label className="text-sm font-medium mb-2 block">Ämne</label>
                 <Input 
-                  {...register("subject", { required: "Ämne är obligatoriskt" })}
+                  {...register("subject", { 
+                    required: "Ämne är obligatoriskt",
+                    minLength: { value: 3, message: "Ämne måste vara minst 3 tecken" },
+                    maxLength: { value: 200, message: "Ämne får inte vara längre än 200 tecken" }
+                  })}
                   placeholder="Vad handlar projektet om?"
                   className="bg-background/50 border-primary/30 focus:border-primary"
+                  disabled={isSubmitting}
                 />
                 {errors.subject && <p className="text-destructive text-sm mt-1">{errors.subject.message}</p>}
               </div>
@@ -155,17 +204,27 @@ const Contact = () => {
               <div>
                 <label className="text-sm font-medium mb-2 block">Meddelande</label>
                 <Textarea 
-                  {...register("message", { required: "Meddelande är obligatoriskt" })}
+                  {...register("message", { 
+                    required: "Meddelande är obligatoriskt",
+                    minLength: { value: 10, message: "Meddelande måste vara minst 10 tecken" },
+                    maxLength: { value: 5000, message: "Meddelande får inte vara längre än 5000 tecken" }
+                  })}
                   placeholder="Berätta mer om ditt projekt..."
                   rows={6}
                   className="bg-background/50 border-primary/30 focus:border-primary resize-none"
+                  disabled={isSubmitting}
                 />
                 {errors.message && <p className="text-destructive text-sm mt-1">{errors.message.message}</p>}
               </div>
               
-              <Button type="submit" size="lg" className="w-full shadow-glow group">
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="w-full shadow-glow group" 
+                disabled={isSubmitting}
+              >
                 <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                Skicka meddelande
+                {isSubmitting ? "Skickar..." : "Skicka meddelande"}
               </Button>
             </form>
           </Card>
