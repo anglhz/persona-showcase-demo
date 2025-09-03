@@ -3,9 +3,9 @@ import { Resend } from "npm:resend@2.0.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
-// Secure CORS headers - restricted for security
+// CORS headers - allow preview domains and production
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "https://your-domain.com", // Update this to your actual domain
+  "Access-Control-Allow-Origin": "*", // Temporarily allowing all origins for development
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Max-Age": "86400", // 24 hours
