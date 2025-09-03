@@ -281,7 +281,7 @@ const About = () => {
                             </p>
 
                             <div>
-                              <h3 className="text-xl font-semibold mb-4">Ingår – från 4 000 kr</h3>
+                              <h3 className="text-xl font-semibold mb-4">Ingår – från 5 000 kr</h3>
                               <div className="grid gap-2">
                                 <p>• Modern design med upp till 4 sektioner (Hero, Om, Tjänster, Kontakt)</p>
                                 <p>• Kontaktformulär kopplat till e-post</p>
