@@ -119,6 +119,7 @@ const About = () => {
               <span className="gradient-text">Lanseringserbjudande</span>
             </h3>
             <p className="text-xl text-muted-foreground">Begränsat erbjudande för nya kunder</p>
+            <p className="text-sm text-muted-foreground mt-2 italic">*Alla priser exklusive moms</p>
           </div>
           
           <Card className="max-w-md mx-auto p-8 gradient-card shadow-glow border-primary/20 mb-16">
