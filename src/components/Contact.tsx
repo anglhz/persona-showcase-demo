@@ -37,7 +37,7 @@ const Contact = () => {
         headers: {
           'Content-Type': 'text/plain',
         },
-        body: `Nytt meddelande från ${data.name}\n\nEmail: ${data.email}\nÄmne: ${data.subject}\n\n${data.message}`,
+        body: `Nytt meddelande från ${data.name}\n\nEmail: ${data.email}\nÄmne: ${data.subject}\nSite: ${window.location.host}\n\n${data.message}`,
       });
 
       // Send email via Supabase Edge Function
@@ -46,7 +46,8 @@ const Contact = () => {
           name: data.name,
           email: data.email,
           subject: data.subject,
-          message: data.message
+          message: data.message,
+          site: window.location.host
         }
       });
 
@@ -65,7 +66,8 @@ const Contact = () => {
           email: data.email,
           subject: data.subject,
           message: data.message,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
+          site: window.location.host
         }),
       });
 
