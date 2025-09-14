@@ -54,6 +54,21 @@ const Contact = () => {
         throw response.error;
       }
 
+      // Send to n8n webhook
+      await fetch('https://n8n.fertekz.com/webhook-test/670076e2-b2dc-4fbe-bd37-9d385d2b14bc', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message,
+          timestamp: new Date().toISOString()
+        }),
+      });
+
       toast.success("Meddelande skickat! Jag återkommer inom 24 timmar.");
       reset();
     } catch (error: any) {
