@@ -32,13 +32,13 @@ const Contact = () => {
     
     try {
       // Send notification to ntfy (keep existing functionality)
-      await fetch('https://ntfy.sh/Fertekz-com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'text/plain',
-        },
-        body: `Nytt meddelande från ${data.name}\n\nEmail: ${data.email}\nÄmne: ${data.subject}\nSite: ${window.location.host}\n\n${data.message}`,
-      });
+      //await fetch('https://ntfy.sh/Fertekz-com', {
+        //method: 'POST',
+        //headers: {
+          //'Content-Type': 'text/plain',
+        //},
+        //body: `Nytt meddelande från ${data.name}\n\nEmail: ${data.email}\nÄmne: ${data.subject}\nSite: ${window.location.host}\n\n${data.message}`,
+      //});
 
       // Send email via Supabase Edge Function
       const response = await supabase.functions.invoke('send-contact-email', {
