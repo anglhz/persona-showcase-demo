@@ -55,6 +55,8 @@ const Hero = () => {
                 src={heroProfile}
                 alt="Tommy - Fullstack Utvecklare"
                 className="w-full max-w-lg mx-auto rounded-2xl shadow-hero animate-glow"
+                fetchPriority="high"
+                loading="eager"
               />
               <div className="absolute inset-0 rounded-2xl gradient-accent opacity-20" />
             </div>
