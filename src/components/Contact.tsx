@@ -56,7 +56,7 @@ const Contact = () => {
       }
 
       // Send to n8n webhook
-      await fetch('https://n8n.fertekz.com/webhook-test/670076e2-b2dc-4fbe-bd37-9d385d2b14bc', {
+      await fetch('https://n8n.fertekz.com/webhook/670076e2-b2dc-4fbe-bd37-9d385d2b14bc', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
