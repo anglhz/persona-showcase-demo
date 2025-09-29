@@ -62,12 +62,13 @@ const Contact = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          type: 'contact',
+          site: window.location.origin,
           name: data.name,
           email: data.email,
           subject: data.subject,
           message: data.message,
           timestamp: new Date().toISOString(),
-          site: window.location.host
         }),
       });
 
