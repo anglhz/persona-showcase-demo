@@ -147,11 +147,19 @@ const Contact = () => {
                     <MapPin className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Plats</h4>
-                    <p className="text-muted-foreground">Eskilstuna, Sverige</p>
+                    <h4 className="font-semibold">Plats & Serviceområde</h4>
+                    <p className="text-muted-foreground">Eskilstuna, Södermanland</p>
+                    <p className="text-sm text-muted-foreground/80">Hjälper kunder i hela Sörmland & Mälardalen</p>
                   </div>
                 </div>
               </Card>
+            </div>
+
+            {/* Service Area Info */}
+            <div className="mt-6 p-4 rounded-lg bg-primary/5 border border-primary/10">
+              <p className="text-sm text-muted-foreground">
+                <strong className="text-foreground">Serviceområde:</strong> Jag hjälper företag och privatpersoner i Eskilstuna, Strängnäs, Katrineholm, Nyköping och hela Södermanland/Sörmland med professionell webbutveckling och webdesign.
+              </p>
             </div>
 
           </div>

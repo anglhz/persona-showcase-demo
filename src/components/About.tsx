@@ -65,8 +65,8 @@ const About = () => {
             Om <span className="gradient-text">Mig</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Jag är en självlärd hobbyutvecklare med passion för att skapa digitala lösningar 
-            som verkligen gör skillnad för människor och företag.
+            Jag är en självlärd hobbyutvecklare baserad i <strong>Eskilstuna, Södermanland</strong> med passion för att skapa digitala lösningar 
+            som verkligen gör skillnad för människor och företag i hela <strong>Sörmland och Mälardalen</strong>.
           </p>
         </div>
 
@@ -80,10 +80,10 @@ const About = () => {
               med HTML och CSS, men har vuxit till att omfatta moderna ramverk och teknologier.
             </p>
             <p className="text-muted-foreground">
-              Idag fokuserar jag på att hjälpa företag och individer att etablera sin digitala 
+              Idag fokuserar jag på att hjälpa företag och individer i <strong>Eskilstuna, Strängnäs, Katrineholm, Nyköping</strong> och hela <strong>Södermanland</strong> att etablera sin digitala 
               närvaro genom professionella webbplatser och portfolios.
             </p>
-            <h3 className="text-2xl font-bold mb-4">Min Tjänster</h3>
+            <h3 className="text-2xl font-bold mb-4">Mina Tjänster</h3>
             <p className="text-muted-foreground">
               Jag erbjuder tre tydliga paketlösningar beroende på dina behov – från enkel landningssida till full 
               företagswebbplats. Alla paket är mobilanpassade, SEO-optimerade och levereras med en enkel 
