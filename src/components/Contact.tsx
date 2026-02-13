@@ -19,7 +19,12 @@ interface FormData {
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
     // Check honeypot field - if filled, it's likely spam
@@ -29,26 +34,26 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
-    
+
     try {
       // Send notification to ntfy (keep existing functionality)
       //await fetch('https://ntfy.sh/Fertekz-com', {
-        //method: 'POST',
-        //headers: {
-          //'Content-Type': 'text/plain',
-        //},
-        //body: `Nytt meddelande från ${data.name}\n\nEmail: ${data.email}\nÄmne: ${data.subject}\nSite: ${window.location.host}\n\n${data.message}`,
+      //method: 'POST',
+      //headers: {
+      //'Content-Type': 'text/plain',
+      //},
+      //body: `Nytt meddelande från ${data.name}\n\nEmail: ${data.email}\nÄmne: ${data.subject}\nSite: ${window.location.host}\n\n${data.message}`,
       //});
 
       // Send email via Supabase Edge Function
-      const response = await supabase.functions.invoke('send-contact-email', {
+      const response = await supabase.functions.invoke("send-contact-email", {
         body: {
           name: data.name,
           email: data.email,
           subject: data.subject,
           message: data.message,
-          site: window.location.host
-        }
+          site: window.location.host,
+        },
       });
 
       if (response.error) {
@@ -56,15 +61,13 @@ const Contact = () => {
       }
 
       // Send to n8n webhook
-      await fetch('https://n8n.fertekz.com/webhook/670076e2-b2dc-4fbe-bd37-9d385d2b14bc', {
-        method: 'POST',
+      await fetch("https://n8n.fertekz.com/webhook/670076e2-b2dc-4fbe-bd37-9d385d2b14bc", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          type: 'contact',
-          website: 'fertekz.com',
-          site: window.location.origin,
+          website: "fertekz.com",
           name: data.name,
           email: data.email,
           subject: data.subject,
@@ -76,14 +79,14 @@ const Contact = () => {
       toast.success("Meddelande skickat! Jag återkommer inom 24 timmar.");
       reset();
     } catch (error: any) {
-      console.error('Contact form error:', error);
-      
+      console.error("Contact form error:", error);
+
       // Handle specific error types
-      if (error.message?.includes('Too many requests')) {
+      if (error.message?.includes("Too many requests")) {
         toast.error("För många förfrågningar. Försök igen om 15 minuter.");
-      } else if (error.message?.includes('Invalid input')) {
+      } else if (error.message?.includes("Invalid input")) {
         toast.error("Ogiltig inmatning. Kontrollera dina uppgifter och försök igen.");
-      } else if (error.message?.includes('Rate limit')) {
+      } else if (error.message?.includes("Rate limit")) {
         toast.error("För många meddelanden skickade. Vänta en stund innan du försöker igen.");
       } else {
         toast.error("Något gick fel. Försök igen senare.");
@@ -101,8 +104,8 @@ const Contact = () => {
             Låt oss <span className="gradient-text">Samarbeta</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Har du ett projekt i åtanke? Jag hjälper gärna till att förverkliga dina idéer. 
-            Kontakta mig så diskuterar vi hur vi kan arbeta tillsammans.
+            Har du ett projekt i åtanke? Jag hjälper gärna till att förverkliga dina idéer. Kontakta mig så diskuterar
+            vi hur vi kan arbeta tillsammans.
           </p>
         </div>
 
@@ -159,10 +162,11 @@ const Contact = () => {
             {/* Service Area Info */}
             <div className="mt-6 p-4 rounded-lg bg-primary/5 border border-primary/10">
               <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">Serviceområde:</strong> Jag hjälper företag och privatpersoner i Eskilstuna, Strängnäs, Katrineholm, Nyköping och hela Södermanland/Sörmland med professionell webbutveckling och webdesign.
+                <strong className="text-foreground">Serviceområde:</strong> Jag hjälper företag och privatpersoner i
+                Eskilstuna, Strängnäs, Katrineholm, Nyköping och hela Södermanland/Sörmland med professionell
+                webbutveckling och webdesign.
               </p>
             </div>
-
           </div>
 
           {/* Contact Form */}
@@ -177,15 +181,15 @@ const Contact = () => {
                 tabIndex={-1}
                 autoComplete="off"
               />
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium mb-2 block">Namn</label>
-                  <Input 
-                    {...register("name", { 
+                  <Input
+                    {...register("name", {
                       required: "Namn är obligatoriskt",
                       minLength: { value: 2, message: "Namn måste vara minst 2 tecken" },
-                      maxLength: { value: 100, message: "Namn får inte vara längre än 100 tecken" }
+                      maxLength: { value: 100, message: "Namn får inte vara längre än 100 tecken" },
                     })}
                     placeholder="Ditt namn"
                     className="bg-background/50 border-primary/30 focus:border-primary"
@@ -195,14 +199,14 @@ const Contact = () => {
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-2 block">Email</label>
-                  <Input 
-                    {...register("email", { 
+                  <Input
+                    {...register("email", {
                       required: "Email är obligatoriskt",
                       maxLength: { value: 254, message: "Email får inte vara längre än 254 tecken" },
                       pattern: {
                         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                        message: "Ogiltig email-adress"
-                      }
+                        message: "Ogiltig email-adress",
+                      },
                     })}
                     type="email"
                     placeholder="din@email.se"
@@ -212,14 +216,14 @@ const Contact = () => {
                   {errors.email && <p className="text-destructive text-sm mt-1">{errors.email.message}</p>}
                 </div>
               </div>
-              
+
               <div>
                 <label className="text-sm font-medium mb-2 block">Ämne</label>
-                <Input 
-                  {...register("subject", { 
+                <Input
+                  {...register("subject", {
                     required: "Ämne är obligatoriskt",
                     minLength: { value: 3, message: "Ämne måste vara minst 3 tecken" },
-                    maxLength: { value: 200, message: "Ämne får inte vara längre än 200 tecken" }
+                    maxLength: { value: 200, message: "Ämne får inte vara längre än 200 tecken" },
                   })}
                   placeholder="Vad handlar projektet om?"
                   className="bg-background/50 border-primary/30 focus:border-primary"
@@ -227,14 +231,14 @@ const Contact = () => {
                 />
                 {errors.subject && <p className="text-destructive text-sm mt-1">{errors.subject.message}</p>}
               </div>
-              
+
               <div>
                 <label className="text-sm font-medium mb-2 block">Meddelande</label>
-                <Textarea 
-                  {...register("message", { 
+                <Textarea
+                  {...register("message", {
                     required: "Meddelande är obligatoriskt",
                     minLength: { value: 10, message: "Meddelande måste vara minst 10 tecken" },
-                    maxLength: { value: 5000, message: "Meddelande får inte vara längre än 5000 tecken" }
+                    maxLength: { value: 5000, message: "Meddelande får inte vara längre än 5000 tecken" },
                   })}
                   placeholder="Berätta mer om ditt projekt..."
                   rows={6}
@@ -243,13 +247,8 @@ const Contact = () => {
                 />
                 {errors.message && <p className="text-destructive text-sm mt-1">{errors.message.message}</p>}
               </div>
-              
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full shadow-glow group" 
-                disabled={isSubmitting}
-              >
+
+              <Button type="submit" size="lg" className="w-full shadow-glow group" disabled={isSubmitting}>
                 <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 {isSubmitting ? "Skickar..." : "Skicka meddelande"}
               </Button>
