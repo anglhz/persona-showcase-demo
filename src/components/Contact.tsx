@@ -63,6 +63,7 @@ const Contact = () => {
         },
         body: JSON.stringify({
           type: 'contact',
+          website: 'fertekz.com',
           site: window.location.origin,
           name: data.name,
           email: data.email,
