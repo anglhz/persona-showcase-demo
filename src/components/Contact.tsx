@@ -68,6 +68,7 @@ const Contact = () => {
         },
         body: JSON.stringify({
           website: "fertekz.com",
+          type: "contact_form",
           name: data.name,
           email: data.email,
           subject: data.subject,
