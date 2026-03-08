@@ -10,128 +10,20 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "13.0.4"
+    PostgrestVersion: "14.1"
   }
   public: {
     Tables: {
-      profiles: {
-        Row: {
-          created_at: string
-          id: string
-          name: string
-          role: Database["public"]["Enums"]["user_role"]
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          name: string
-          role?: Database["public"]["Enums"]["user_role"]
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          name?: string
-          role?: Database["public"]["Enums"]["user_role"]
-          updated_at?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      servers: {
-        Row: {
-          created_at: string
-          game: Database["public"]["Enums"]["game_type"]
-          id: string
-          ip: string
-          name: string
-          path: string
-          port: number
-          startup_args: string | null
-          startup_config: string | null
-          startup_exec: string | null
-          startup_extra: string | null
-          startup_punkbuster: boolean | null
-          status: Database["public"]["Enums"]["server_status"]
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          game: Database["public"]["Enums"]["game_type"]
-          id?: string
-          ip: string
-          name: string
-          path: string
-          port: number
-          startup_args?: string | null
-          startup_config?: string | null
-          startup_exec?: string | null
-          startup_extra?: string | null
-          startup_punkbuster?: boolean | null
-          status?: Database["public"]["Enums"]["server_status"]
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          game?: Database["public"]["Enums"]["game_type"]
-          id?: string
-          ip?: string
-          name?: string
-          path?: string
-          port?: number
-          startup_args?: string | null
-          startup_config?: string | null
-          startup_exec?: string | null
-          startup_extra?: string | null
-          startup_punkbuster?: boolean | null
-          status?: Database["public"]["Enums"]["server_status"]
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      user_server_assignments: {
-        Row: {
-          created_at: string
-          id: string
-          server_id: string
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          server_id: string
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          server_id?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "user_server_assignments_server_id_fkey"
-            columns: ["server_id"]
-            isOneToOne: false
-            referencedRelation: "servers"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      get_current_user_role: { Args: never; Returns: string }
+      [_ in never]: never
     }
     Enums: {
-      game_type: "cod1" | "cod2" | "cod_uo" | "cod4"
-      server_status: "running" | "stopped" | "restarting"
-      user_role: "admin" | "user"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -258,10 +150,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      game_type: ["cod1", "cod2", "cod_uo", "cod4"],
-      server_status: ["running", "stopped", "restarting"],
-      user_role: ["admin", "user"],
-    },
+    Enums: {},
   },
 } as const
