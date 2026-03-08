@@ -1,37 +1,18 @@
 
 
-## Add Static Website Identifier to Contact Form
+## Replace Hero Profile Image
 
-A simple one-line change to the n8n webhook payload in `src/components/Contact.tsx`.
+Copy the uploaded image to `src/assets/` and update the Hero component to use it.
 
-### What changes
+### Changes
 
-In the `fetch` call to n8n, add a static `website: "fertekz.com"` field to the JSON body. This gives you a reliable, environment-independent identifier to use in n8n if-statements.
-
-### Technical details
-
-**File:** `src/components/Contact.tsx`
-
-Update the n8n webhook `body` from:
-```js
-body: JSON.stringify({
-  type: 'contact',
-  site: window.location.origin,
-  name: data.name,
-  ...
-})
-```
-
-To:
-```js
-body: JSON.stringify({
-  type: 'contact',
-  website: 'fertekz.com',
-  site: window.location.origin,
-  name: data.name,
-  ...
-})
-```
-
-The existing `site` field is kept for debugging purposes, but the new `website` field is what you would use in n8n to route with if-statements. For your other sites, you would set `website: 'intuitive-gaming.com'` etc.
+1. **Copy file:** `user-uploads://Gemini_Generated_Image_npo8rcnpo8rcnpo8.png` to `src/assets/new-hero-profile.png` (replacing existing)
+2. **Update `src/components/Hero.tsx`:** Change the import from `.webp` to `.png`:
+   ```ts
+   import heroProfile from "@/assets/new-hero-profile.png";
+   ```
+3. **Update `index.html`:** Update the preload link from `.webp` to `.png`:
+   ```html
+   <link rel="preload" as="image" href="/src/assets/new-hero-profile.png" fetchpriority="high">
+   ```
 
