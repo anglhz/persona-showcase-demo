@@ -21,7 +21,7 @@ const Hero = () => {
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="block">Hej, mitt namn är</span>
-              <span className="gradient-text animate-glow">Tommy</span>
+              <span className="shine-text animate-glow">Tommy</span>
             </h1>
             
             <div className="flex justify-center lg:justify-start mb-8">
