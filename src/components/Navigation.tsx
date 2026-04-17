@@ -50,7 +50,7 @@ const Navigation = () => {
           <div className="flex-shrink-0">
             <button 
               onClick={() => scrollToSection("#home")}
-              className="text-2xl font-black gradient-text hover:scale-105 transition-transform tracking-wider"
+              className="text-2xl font-black shine-text hover:scale-105 transition-transform tracking-wider"
               style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
             >
               Fertekz IT
