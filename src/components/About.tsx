@@ -60,7 +60,7 @@ const About = () => {
   return (
     <section className="py-12 bg-section-bg" id="about">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Om <span className="gradient-text">Mig</span>
           </h2>
@@ -70,7 +70,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-1 gap-12 mb-16">
+        <div className="grid lg:grid-cols-1 gap-12 mb-16 reveal">
           {/* Bio */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold mb-4">Min Resa</h3>
@@ -182,8 +182,8 @@ const About = () => {
             {services.map((service, index) => (
               <Card
                 key={service.title}
-                className="p-8 gradient-card shadow-card hover:shadow-glow transition-all duration-300 group animate-slide-up"
-                style={{animationDelay: `${index * 0.2}s`}}
+                className="p-8 gradient-card shadow-card hover:shadow-glow transition-all duration-300 group reveal"
+                style={{transitionDelay: `${index * 0.15}s`}}
               >
                 <div className="text-primary mb-4 group-hover:scale-110 transition-transform">
                   {service.icon}

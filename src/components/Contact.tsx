@@ -100,7 +100,7 @@ const Contact = () => {
   return (
     <section className="py-20" id="contact">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Låt oss <span className="gradient-text">Samarbeta</span>
           </h2>
@@ -112,7 +112,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-8 reveal reveal-left">
             <div>
               <h3 className="text-2xl font-bold mb-6">Kontakta mig</h3>
               <p className="text-muted-foreground mb-8">
@@ -171,7 +171,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="p-8 gradient-card shadow-hero">
+          <Card className="p-8 gradient-card shadow-hero reveal reveal-right">
             <h3 className="text-2xl font-bold mb-6">Skicka ett meddelande</h3>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Honeypot field - hidden from users, used to detect spam */}

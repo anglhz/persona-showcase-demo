@@ -35,7 +35,7 @@ const Projects = () => {
   return (
     <section className="py-20" id="projects">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Mina <span className="gradient-text">Projekt</span>
           </h2>
@@ -51,7 +51,7 @@ const Projects = () => {
             .map((project, index) => (
               <Card
                 key={project.title}
-                className="overflow-hidden gradient-card shadow-hero group animate-slide-up"
+                className="overflow-hidden gradient-card shadow-hero group reveal reveal-scale"
               >
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="relative overflow-hidden">
@@ -102,8 +102,8 @@ const Projects = () => {
             .map((project, index) => (
               <Card
                 key={project.title}
-                className="group overflow-hidden gradient-card shadow-card hover:shadow-glow transition-all duration-300 animate-slide-up"
-                style={{animationDelay: `${index * 0.1}s`}}
+                className="group overflow-hidden gradient-card shadow-card hover:shadow-glow transition-all duration-300 reveal"
+                style={{transitionDelay: `${index * 0.12}s`}}
               >
                 <div className="relative overflow-hidden">
                   <img

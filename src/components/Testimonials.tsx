@@ -29,7 +29,7 @@ const Testimonials = () => {
   return (
     <section className="py-20 bg-section-bg" id="testimonials">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Vad mina <span className="gradient-text">Kunder Säger</span>
           </h2>
@@ -42,8 +42,8 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card
               key={testimonial.name}
-              className="p-6 gradient-card shadow-card hover:shadow-glow transition-all duration-300 group animate-slide-up"
-              style={{animationDelay: `${index * 0.2}s`}}
+              className="p-6 gradient-card shadow-card hover:shadow-glow transition-all duration-300 group reveal"
+              style={{transitionDelay: `${index * 0.15}s`}}
             >
               {/* Rating Stars */}
               <div className="flex items-center gap-1 mb-4">
