@@ -32,7 +32,7 @@ const Process = () => {
   return (
     <section className="py-20" id="process">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Min <span className="gradient-text">Arbetsprocess</span>
           </h2>
@@ -45,8 +45,8 @@ const Process = () => {
           {steps.map((step, index) => (
             <Card
               key={step.title}
-              className="relative p-6 gradient-card shadow-card hover:shadow-glow transition-all duration-300 group animate-slide-up"
-              style={{animationDelay: `${index * 0.2}s`}}
+              className="relative p-6 gradient-card shadow-card hover:shadow-glow transition-all duration-300 group reveal"
+              style={{transitionDelay: `${index * 0.15}s`}}
             >
               {/* Step Number */}
               <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">

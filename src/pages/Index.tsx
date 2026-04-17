@@ -13,23 +13,23 @@ const Index = () => {
     // Add smooth scrolling behavior
     document.documentElement.style.scrollBehavior = 'smooth';
     
-    // Add intersection observer for animations
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+    // Scroll-triggered reveal animations
+    const observerCallback = (entries: IntersectionObserverEntry[], obs: IntersectionObserver) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-slide-up');
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
         }
       });
     };
 
     const observer = new IntersectionObserver(observerCallback, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.15,
+      rootMargin: '0px 0px -80px 0px'
     });
 
-    // Observe all sections
-    document.querySelectorAll('section').forEach((section) => {
-      observer.observe(section);
+    document.querySelectorAll('.reveal').forEach((el) => {
+      observer.observe(el);
     });
 
     return () => {
