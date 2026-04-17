@@ -30,14 +30,6 @@ const Projects = () => {
       github: "#",
       live: "https://preview--hakuna-potata-fiesta-web.lovable.app"
     },
-    {
-      title: "NorrElektro",
-      description: "Elektriker baserad i Norrköping",
-      image: "/lovable-uploads/4753ea48-827c-4ffb-93e4-ecfa8ca526dc.webp",
-      tech: ["React", "TypeScript", "Vite"],
-      github: "#",
-      live: "https://preview--norrkoping-spark-studio.lovable.app"
-    }
   ];
 
   return (
