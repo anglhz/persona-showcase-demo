@@ -28,7 +28,7 @@ const Projects = () => {
       image: "/lovable-uploads/1de7b339-010b-4b94-bd10-271599ec0995.webp",
       tech: ["React Native", "Express", "MongoDB", "IoT"],
       github: "#",
-      live: "https://preview--hakuna-potata-fiesta-web.lovable.app"
+      live: "https://hakunapotata.com"
     },
   ];
 
