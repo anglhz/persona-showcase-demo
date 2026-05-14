@@ -185,8 +185,9 @@ const Contact = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Namn</label>
+                  <label htmlFor="contact-name" className="text-sm font-medium mb-2 block">Namn</label>
                   <Input
+                    id="contact-name"
                     {...register("name", {
                       required: "Namn är obligatoriskt",
                       minLength: { value: 2, message: "Namn måste vara minst 2 tecken" },
@@ -199,8 +200,9 @@ const Contact = () => {
                   {errors.name && <p className="text-destructive text-sm mt-1">{errors.name.message}</p>}
                 </div>
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Email</label>
+                  <label htmlFor="contact-email" className="text-sm font-medium mb-2 block">Email</label>
                   <Input
+                    id="contact-email"
                     {...register("email", {
                       required: "Email är obligatoriskt",
                       maxLength: { value: 254, message: "Email får inte vara längre än 254 tecken" },
@@ -219,8 +221,9 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="text-sm font-medium mb-2 block">Ämne</label>
+                <label htmlFor="contact-subject" className="text-sm font-medium mb-2 block">Ämne</label>
                 <Input
+                  id="contact-subject"
                   {...register("subject", {
                     required: "Ämne är obligatoriskt",
                     minLength: { value: 3, message: "Ämne måste vara minst 3 tecken" },
@@ -234,8 +237,9 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="text-sm font-medium mb-2 block">Meddelande</label>
+                <label htmlFor="contact-message" className="text-sm font-medium mb-2 block">Meddelande</label>
                 <Textarea
+                  id="contact-message"
                   {...register("message", {
                     required: "Meddelande är obligatoriskt",
                     minLength: { value: 10, message: "Meddelande måste vara minst 10 tecken" },
