@@ -22,6 +22,9 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="block">Hej, mitt namn är</span>
               <span className="shine-text animate-glow">Tommy</span>
+              <span className="block text-2xl md:text-3xl mt-4 text-muted-foreground font-medium">
+                Webbutvecklare & Designer i Eskilstuna
+              </span>
             </h1>
             
             <div className="flex justify-center lg:justify-start mb-8">
