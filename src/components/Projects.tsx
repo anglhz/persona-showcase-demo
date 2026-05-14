@@ -60,7 +60,7 @@ const Projects = () => {
                   <div className="relative overflow-hidden">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={project.imageAlt}
                       className="w-full h-80 lg:h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors" />
