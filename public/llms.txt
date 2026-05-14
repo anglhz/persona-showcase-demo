@@ -1,0 +1,13 @@
+# Fertekz IT
+
+> Webbutveckling och webdesign av Tommy Fernández i Eskilstuna. Moderna hemsidor, landningssidor och företagswebbplatser för kunder i Sörmland och Mälardalen.
+
+## Pages
+
+- [Startsida](/): Tjänster, projekt, arbetsprocess, omdömen och kontakt.
+- [Om & FAQ](/#about): Bakgrund, kompetens och vanliga frågor.
+- [Erbjudanden](/#services): Landningssidor, portfolio och företagswebbplatser med priser.
+- [Projekt](/#projects): Utvalda kundprojekt (DrogSök.se, Intuitive-Gaming, Hakuna Potata).
+- [Arbetsprocess](/#process): Konsultation, design, granskning och lansering.
+- [Omdömen](/#testimonials): Kundrecensioner.
+- [Kontakt](/#contact): E-post tommy@fertekz.com, telefon 0734145099, kontaktformulär.
