@@ -111,7 +111,7 @@ const Projects = () => {
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={project.imageAlt}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors" />
@@ -137,6 +137,7 @@ const Projects = () => {
                     <Button 
                       size="sm" 
                       variant="ghost"
+                      aria-label={`Besök ${project.title} live-webbplats`}
                       onClick={() => window.open(project.live, '_blank')}
                     >
                       <ExternalLink className="h-4 w-4" />
