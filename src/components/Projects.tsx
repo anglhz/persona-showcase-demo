@@ -9,6 +9,7 @@ const Projects = () => {
       title: "DrogSök.se",
       description: "Hemsida för bland annat polisanställda för att hitta specifika läkemedel.",
       image: "/lovable-uploads/16b7cf8d-1ec0-4fcb-ab0b-10a8019d666c.webp",
+      imageAlt: "DrogSök.se startsida – sökverktyg för läkemedel",
       tech: ["React", "TypeScript", "Node.js", "MySQL"],
       github: "#",
       live: "https://drogsok.se",
@@ -18,6 +19,7 @@ const Projects = () => {
       title: "Intuitive - Gaming",
       description: "Gaming hemsida med fokus på server hosting.",
       image: "/lovable-uploads/fd01128c-42c0-4f1e-b860-bae35ecdbbf9.webp",
+      imageAlt: "Intuitive Gaming hemsida – server hosting för gamers",
       tech: ["Next.js", "TypeScript", "Supabase"],
       github: "#",
       live: "https://intuitive-gaming.com"
@@ -26,6 +28,7 @@ const Projects = () => {
       title: "Hakuna Potata",
       description: "Snabbmatskedja baserat i USA med inriktning bakpotatis.",
       image: "/lovable-uploads/1de7b339-010b-4b94-bd10-271599ec0995.webp",
+      imageAlt: "Hakuna Potata webbplats – bakpotatis snabbmatskedja",
       tech: ["React Native", "Express", "MongoDB", "IoT"],
       github: "#",
       live: "https://hakunapotata.com"
